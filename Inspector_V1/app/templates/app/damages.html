@@ -1,0 +1,72 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2 style="text-align:center;">{{ title }}</h2>
+<div class="row" id="treeview">
+    <div class="col-sm-4">
+            <ul>
+                <li>
+                    <details>
+                        <summary>Kodes zu Leitungen</summary>
+                        <ul>
+                            <li>
+                                <details>
+                                    <summary>BA Struktur</summary>  
+                                    <ul>
+                                        <li>BAA Verformung</li>
+                                        <li>BAB Rissbildung</li>
+                                        <li>BAC Rohrbruch/Einsturz</li>
+                                        <li>BAD Defektes Mauerwerk</li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>BB Betrieb</summary>
+                                    <ul>
+                                        <li>BBA Wurzeln</li>
+                                        <li>BBB Anhaftende Stoffe</li>
+                                        <li>BBC Ablagerungen</li>
+                                        <li>BBS Eindringen von Bodenmaterial</li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>BC Bestand</summary>
+                                    <ul>
+                                        <li>BCA Anschluss</li>
+                                        <li>BCB Punktuelle Reperatur</li>
+                                        <li>BCC Kruemmung der Leitung</li>
+                                        <li>BCD Anfangsknoten</li>
+                                    </ul>
+                                </details>
+                           </li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Kodes zu Knoten</summary>
+                        <ul>
+                            <li>DA Struktur</li>
+                            <li>DB Betrieb</li>
+                            <li>DC Bestand</li>
+                            <li>DD Sonstige</li>
+                            <li>CE Grundinformation</li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+    </div>
+    <div class="col-sm-8">
+        <p>TEST</p>
+    </div>
+    
+</div>
+<h3>{{ message }}</h3>
+
+<p>Hier ist der Schadenskatalog zu finden.</p>
+
+{% endblock %}

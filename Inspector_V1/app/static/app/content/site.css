@@ -1,0 +1,86 @@
+﻿/*set the "DWA" Border*/
+#custom_border::before {
+    position: absolute;
+    width: 30%;
+    content: "";
+    height: 2px;
+    background-color: #8dc63f;
+    bottom: 0;
+    left: 0;
+}
+
+#custom_border::after {
+    position: absolute;
+    width: 70%;
+    content: "";
+    height: 2px;
+    background-color: #007dc5;
+    bottom: 0;
+    right: 0;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 50px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*Setting the style for the treeview*/
+
+#treeview {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    border-right: 1px solid #ccc;
+}
+
+#treeview ul.parent *:after {
+    list-style: url("plus-frame-svg.svg");
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+#treeview ul.parent.open *:after{
+    list-style: url("minus-frame-svg.svg");
+    padding-left: 15px;
+    margin-bottom: 0;
+}
