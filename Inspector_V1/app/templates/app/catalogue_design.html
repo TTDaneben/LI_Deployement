@@ -1,0 +1,76 @@
+{% extends "app/damages.html" %}
+
+{% load static %}
+{% block catalogue %}
+
+<div class="damages-container1 thq-card">
+    <h4 class="damages-text">
+        <span>Beschreibung</span>
+    </h4>
+    <div class="damages-catalogue-container section-padding damages-catalogue-root-class-name">
+    <div class="damages-catalogue-container1">
+        <div class="damages-catalogue-container2">
+            <label class="damages-catalogue-text"><span>Kode</span></label>
+            <span class="damages-catalogue-text01"><span>BAA</span></span>
+        </div>
+        <div class="damages-catalogue-container3">
+            <label class="damages-catalogue-text02"><span>Kurztext</span></label>
+            <span class="damages-catalogue-text03"><span>Verformung</span></span>
+        </div>
+    </div>
+    <div class="damages-catalogue-container4">
+        <div class="damages-catalogue-container5">
+            <label class="damages-catalogue-text04">
+                <span>Beschreibung</span>
+                <br />
+            </label>
+            <span class="damages-catalogue-text07">
+                <span>
+                    Der Rohrquerschnitt hat sich gegenueber der Ursprungsform
+                    verformt.
+                </span>
+                <br />
+                <span>Der Kode BAA gilt fuer Rohre aller Werkstoffe.</span>
+                <br />
+                <span>
+                    Bei biegesteifen Rohren mit Deformation aufgrund von Rissbildung
+                    oder Rohrbruch sind zuerst die Risse zu beschreiben und
+                </span>
+                <span>zusaetzlich die Deformation.</span>
+            </span>
+        </div>
+    </div>
+    <div class="damages-catalogue-container6">
+        <label class="damages-catalogue-text14">Charakterisierung 1</label>
+        <span class="damages-catalogue-text15">
+            <span>Verlauf der Verformung:</span>
+            <br />
+            <span>A - vertikal - die Hoehe des Rohres hat sich veraendert</span>
+            <br />
+            <span>B - horizontal - die Rohrweite hat sich verringert</span>
+        </span>
+    </div>
+    <div class="damages-catalogue-container7">
+        <label class="damages-catalogue-text21">Quantifizierung 1</label>
+        <span class="damages-catalogue-text22">
+            Die prozentuale Reduzierung der Abmessung. Die Ermittlung des Wertes
+            zur Quantifizierung der prozentualen Reduzierung der Abmessung kann
+            fuer Kreisprofile am Bildschirm massstabsunabhaengig wie folgt
+            vorgenommen werden: Erfassung der Werte dmax und dmin an gleicher
+            Station (etwa rechtwinklig zueinander), Berechnung (softwareintern):
+            dm = (dmax + dmin) / 2, Verformung = (dmax - dm) / dm x 100 in %
+            Abmessung.
+        </span>
+    </div>
+    <div class="damages-catalogue-container8">
+        <label class="damages-catalogue-text23">Lage am Umfang</label>
+        <span class="damages-catalogue-text24">
+            Die Lage sollte aufgezeichnet werden, wenn die Verformung
+            lokalisiert ist
+        </span>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

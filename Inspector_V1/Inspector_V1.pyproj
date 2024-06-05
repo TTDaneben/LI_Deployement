@@ -4,6 +4,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>Inspector_V1</Name>
     <RootNamespace>Inspector_V1</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -59,7 +60,9 @@
     <Content Include="app\static\app\content\Logo_DWA.png" />
     <Content Include="app\static\app\content\minus-frame-svg.svg" />
     <Content Include="app\static\app\content\plus-frame-svg.svg" />
+    <Content Include="app\templates\app\catalogue_design.html" />
     <Content Include="app\templates\app\damages.html" />
+    <Content Include="KodeDB.sqlite" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

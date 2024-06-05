@@ -1,0 +1,212 @@
+.content-list11-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-top: var(--dl-space-space-unit);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  flex-direction: column;
+}
+.content-list11-container1 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+.content-list11-container2 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+}
+.content-list11-text {
+  align-self: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+}
+.content-list11-text01 {
+  margin: var(--dl-space-space-halfunit);
+  align-self: flex-start;
+  box-shadow: 5px 3px 10px 0px #d4d4d4;
+  font-style: normal;
+  font-weight: 700;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-theme-secondary1);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: var(--dl-space-space-halfunit);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: #ffffff;
+}
+.content-list11-container3 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+}
+.content-list11-text02 {
+  align-self: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+}
+.content-list11-text03 {
+  align-self: flex-start;
+  box-shadow: 5px 3px 10px 0px #d4d4d4;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  font-weight: 700;
+  margin-left: var(--dl-space-space-halfunit);
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-theme-secondary1);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: var(--dl-space-space-halfunit);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: #ffffff;
+}
+.content-list11-container4 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+.content-list11-container5 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+}
+.content-list11-text04 {
+  align-self: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+}
+.content-list11-text07 {
+  margin: var(--dl-space-space-halfunit);
+  align-self: flex-start;
+  box-shadow: rgb(212, 212, 212) 5px 3px 10px 0px;
+  font-style: normal;
+  font-weight: 700;
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-theme-secondary1);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: var(--dl-space-space-halfunit);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: rgb(255, 255, 255);
+}
+.content-list11-container6 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+}
+.content-list11-text14 {
+  align-self: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+}
+.content-list11-text15 {
+  align-self: flex-start;
+  box-shadow: rgb(212, 212, 212) 5px 3px 10px 0px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  font-weight: 700;
+  margin-left: var(--dl-space-space-halfunit);
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-theme-secondary1);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: var(--dl-space-space-halfunit);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: rgb(255, 255, 255);
+}
+.content-list11-container7 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-self: flex-start;
+  margin-bottom: var(--dl-space-space-halfunit);
+  flex-direction: column;
+}
+.content-list11-text21 {
+  align-self: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+}
+.content-list11-text22 {
+  align-self: flex-start;
+  box-shadow: rgb(212, 212, 212) 5px 3px 10px 0px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  font-weight: 700;
+  margin-left: var(--dl-space-space-halfunit);
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-theme-secondary1);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: var(--dl-space-space-halfunit);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: rgb(255, 255, 255);
+}
+.content-list11-container8 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+.content-list11-text23 {
+  align-self: flex-start;
+  margin-left: var(--dl-space-space-halfunit);
+}
+.content-list11-text24 {
+  align-self: flex-start;
+  box-shadow: rgb(212, 212, 212) 5px 3px 10px 0px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  font-weight: 700;
+  margin-left: var(--dl-space-space-halfunit);
+  padding-top: var(--dl-space-space-halfunit);
+  border-color: var(--dl-color-theme-secondary1);
+  border-style: hidden;
+  border-width: 1px;
+  padding-left: var(--dl-space-space-halfunit);
+  border-radius: var(--dl-radius-radius-radius4);
+  padding-right: var(--dl-space-space-halfunit);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: rgb(255, 255, 255);
+}
+.content-list11-root-class-name {
+  fill: var(--dl-color-theme-neutral-dark);
+  flex: 1;
+  color: var(--dl-color-theme-neutral-dark);
+  width: 100%;
+}

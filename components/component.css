@@ -1,0 +1,23 @@
+.app-component-container {
+  width: 30%;
+  display: flex;
+  position: relative;
+  box-shadow: 5px 5px 10px 0px #bebdbd;
+  align-items: center;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--dl-color-theme-neutral-light);
+}
+.app-component-text {
+  font-size: 30px;
+  font-family: "Arial";
+}
+.app-component-text1 {
+  text-align: center;
+}
+@media(max-width: 767px) {
+  .app-component-container {
+    width: 100%;
+  }
+}
