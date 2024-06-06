@@ -30,8 +30,8 @@
 
 <p>Hier ist der Schadenskatalog zu finden.</p>
 
-<div class="damages-container section-padding">
-    <div class="row" id="treeview">
+<div class="row" id="treeview">
+    <div class="damages-container section-padding">
         <div class="col-sm-4">
             <ul>
                 <li>
@@ -84,6 +84,8 @@
                 </li>
             </ul>
         </div>
+    </div>
+        <div class="damages-container section-padding">
         <div class="col-sm-8 text-center">
             {% block catalogue %}
             <h2>{{ title }}</h2>
@@ -92,7 +94,6 @@
             <p>nach DWA M 149-2:2006</p>
             {% endblock %}
         </div>
-
-    </div>
+    	</div>
 </div>
 {% endblock %}
