@@ -1,7 +1,7 @@
 """
-Django settings for Inspector_V1 project.
+Django settings for Test_Center project.
 
-Based on 'django-admin startproject' using Django 2.1.2.
+Based on by 'django-admin startproject' using Django 2.1.2.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/2.1/topics/settings/
@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import posixpath
-from telnetlib import CHARSET
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '11ede8ba-b42b-4d70-9c3f-df51c8e06058'
+SECRET_KEY = '2e5ecf21-ddb8-430f-9488-dce8353bedb1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,15 +30,14 @@ ALLOWED_HOSTS = []
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
-    'app',
     # Add your apps here to enable them
+    'Pic_Catalogue',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
 ]
 
 # Middleware framework
@@ -54,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Inspector_V1.urls'
+ROOT_URLCONF = 'Test_Center.urls'
 
 # Template configuration
 # https://docs.djangoproject.com/en/2.1/topics/templates/
@@ -70,24 +68,18 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'file_charset': 'utf-8',
         },
     },
 ]
 
-WSGI_APPLICATION = 'Inspector_V1.wsgi.application'
+WSGI_APPLICATION = 'Test_Center.wsgi.application'
+
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    
-    'KodeDB': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'KodeDB.sqlite'),
-        
     }
 }
 
@@ -110,8 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
-DEFAULT_CHARSET = 'utf-8'
-LANGUAGE_CODE = 'de-de'
+LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True

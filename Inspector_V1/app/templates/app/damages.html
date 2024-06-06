@@ -1,48 +1,59 @@
 {% extends "app/layout.html" %}
 
 {% block content %}
+{% load static %}
+<style>
+    .hidden-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    .hidden-link:hover {
+        text-decoration: none;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<h2 style="text-align:center;">{{ title }}</h2>
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<h3 style="text-align:left;">{{ message }}</h3>
+
+<p>Hier ist der Schadenskatalog zu finden.</p>
+
 <div class="row" id="treeview">
-    <div class="col-sm-4">
+    <div class="damages-container section-padding">
+        <div class="col-sm-4">
             <ul>
                 <li>
                     <details>
                         <summary>Kodes zu Leitungen</summary>
-                        <ul>
+                        <ul>    
+                            {% for kapitel in en_kode_kapitel %}
+                            {% if kapitel.enkap_titel == 'B' %}
                             <li>
                                 <details>
-                                    <summary>BA Struktur</summary>  
+                                    <summary>{{ kapitel.enkap_kurz }} {{ kapitel.enkap_lang }}</summary>
                                     <ul>
-                                        <li>BAA Verformung</li>
-                                        <li>BAB Rissbildung</li>
-                                        <li>BAC Rohrbruch/Einsturz</li>
-                                        <li>BAD Defektes Mauerwerk</li>
+                                        {% for kodes in en_hauptkode %}
+                                        {% if kapitel.enkap_id == kodes.en_child %}
+                                        <li>{{ kodes.en_hauptkode }} {{ kodes.en_lang }}</li>
+                                        {% endif %}
+                                        {% endfor %}
                                     </ul>
                                 </details>
                             </li>
-                            <li>
-                                <details>
-                                    <summary>BB Betrieb</summary>
-                                    <ul>
-                                        <li>BBA Wurzeln</li>
-                                        <li>BBB Anhaftende Stoffe</li>
-                                        <li>BBC Ablagerungen</li>
-                                        <li>BBS Eindringen von Bodenmaterial</li>
-                                    </ul>
-                                </details>
-                            </li>
-                            <li>
-                                <details>
-                                    <summary>BC Bestand</summary>
-                                    <ul>
-                                        <li>BCA Anschluss</li>
-                                        <li>BCB Punktuelle Reperatur</li>
-                                        <li>BCC Kruemmung der Leitung</li>
-                                        <li>BCD Anfangsknoten</li>
-                                    </ul>
-                                </details>
-                           </li>
+                            {% endif %}
+                            {% endfor %}
                         </ul>
                     </details>
                 </li>
@@ -50,23 +61,39 @@
                     <details>
                         <summary>Kodes zu Knoten</summary>
                         <ul>
-                            <li>DA Struktur</li>
-                            <li>DB Betrieb</li>
-                            <li>DC Bestand</li>
-                            <li>DD Sonstige</li>
-                            <li>CE Grundinformation</li>
+                            {% for kapitel in en_kode_kapitel %}
+                            {% if kapitel.enkap_titel == 'D' %}
+                            <li>
+                                <details>
+                                    <summary>{{ kapitel.enkap_kurz }} {{ kapitel.enkap_lang }}</summary>
+                                    <ul>
+                                        {% for kodes in en_hauptkode %}
+                                        {% if kapitel.enkap_id == kodes.en_child %}
+                                        <li> 
+                                            <a class="hidden-link" href="{% url 'clicked_kode' kodes.en_id %}">{{ kodes.en_hauptkode }}                 {{ kodes.en_lang }}</a>
+                                        </li>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </details>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
                         </ul>
                     </details>
                 </li>
             </ul>
+        </div>
     </div>
-    <div class="col-sm-8">
-        <p>TEST</p>
-    </div>
-    
+        <div class="damages-container section-padding">
+        <div class="col-sm-8 text-center">
+            {% block catalogue %}
+            <h2>{{ title }}</h2>
+            <img alt="LI Inspector" src="{% static 'app/content/Logo_DWA.png' %}" width="100" height="45">
+            <h4 style="font-weight: bold; margin-top: 40px;">Digitaler Schadenskatalog</h4>
+            <p>nach DWA M 149-2:2006</p>
+            {% endblock %}
+        </div>
+    	</div>
 </div>
-<h3>{{ message }}</h3>
-
-<p>Hier ist der Schadenskatalog zu finden.</p>
-
 {% endblock %}

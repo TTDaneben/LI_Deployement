@@ -3,9 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{8570D002-6631-49A7-8742-A0D3F75A8820}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Test_Center", "Test_Center\Test_Center.pyproj", "{C9A9FC38-7614-4C02-ABCE-92636E94CF3B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Inspector_V1", "Inspector_V1\Inspector_V1.pyproj", "{FE22F3EE-F889-4659-B03B-12189A05549F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9A9FC38-7614-4C02-ABCE-92636E94CF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A9FC38-7614-4C02-ABCE-92636E94CF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A9FC38-7614-4C02-ABCE-92636E94CF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A9FC38-7614-4C02-ABCE-92636E94CF3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE22F3EE-F889-4659-B03B-12189A05549F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE22F3EE-F889-4659-B03B-12189A05549F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE22F3EE-F889-4659-B03B-12189A05549F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE22F3EE-F889-4659-B03B-12189A05549F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9A9FC38-7614-4C02-ABCE-92636E94CF3B} = {8570D002-6631-49A7-8742-A0D3F75A8820}
+		{FE22F3EE-F889-4659-B03B-12189A05549F} = {8570D002-6631-49A7-8742-A0D3F75A8820}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B01C622-A437-45DB-89CC-38A69C925B3F}
