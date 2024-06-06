@@ -25,6 +25,7 @@
     padding-left: var(--space-twounits);
     padding-right: var(--space-twounits);
     padding-bottom: var(--space-oneandhalfunits);
+    margin-bottom: var(--space-twounits);
 }
 }
 
