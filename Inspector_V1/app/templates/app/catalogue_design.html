@@ -33,7 +33,7 @@
             {% if en_c1_bo == 'True' %}
                 <span>{{ en_c1_be }}</span>
                     {% for items in en_c1_text %}
-                    <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }} - {{ items.enc1_lang }}</span>
+                    <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }} - {{ items.enc1_lang }}</span> <!--Hier muss noch nen If hinzugefügt werden, en_lang nicht immer verfügbar-->
                     {% endfor %}
             {% endif %}
         </span>
