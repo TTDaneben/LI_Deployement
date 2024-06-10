@@ -32,9 +32,9 @@
         <span class="damages-catalogue-text15">
             {% if en_c1_bo == 'True' %}
                 <span>{{ en_c1_be }}</span>
-        
-                    <br><span>{{ en_c1_k|join:"<br> " }}</span>
-                
+                    {% for items in en_c1_text %}
+                    <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }} - {{ items.enc1_lang }}</span>
+                    {% endfor %}
             {% endif %}
         </span>
     </div>
