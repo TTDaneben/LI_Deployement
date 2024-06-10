@@ -11,11 +11,11 @@
     <div class="damages-catalogue-container1">
         <div class="damages-catalogue-container2">
             <label class="damages-catalogue-text"><span>Kode</span></label>
-            <span class="damages-catalogue-text01"><span>BAA</span></span>
+                <span class="damages-catalogue-text01">{{ en_filtrd }}</span>
         </div>
         <div class="damages-catalogue-container3">
             <label class="damages-catalogue-text02"><span>Kurztext</span></label>
-            <span class="damages-catalogue-text03"><span>Verformung</span></span>
+            <span class="damages-catalogue-text03"><span>{{ kurztext }}</span></span>
         </div>
     </div>
     <div class="damages-catalogue-container4">
@@ -24,30 +24,18 @@
                 <span>Beschreibung</span>
                 <br />
             </label>
-            <span class="damages-catalogue-text07">
-                <span>
-                    Der Rohrquerschnitt hat sich gegenueber der Ursprungsform
-                    verformt.
-                </span>
-                <br />
-                <span>Der Kode BAA gilt fuer Rohre aller Werkstoffe.</span>
-                <br />
-                <span>
-                    Bei biegesteifen Rohren mit Deformation aufgrund von Rissbildung
-                    oder Rohrbruch sind zuerst die Risse zu beschreiben und
-                </span>
-                <span>zusaetzlich die Deformation.</span>
-            </span>
+            <span class="damages-catalogue-text07"> {{ beschreibung }} <span>
         </div>
     </div>
     <div class="damages-catalogue-container6">
         <label class="damages-catalogue-text14">Charakterisierung 1</label>
         <span class="damages-catalogue-text15">
-            <span>Verlauf der Verformung:</span>
-            <br />
-            <span>A - vertikal - die Hoehe des Rohres hat sich veraendert</span>
-            <br />
-            <span>B - horizontal - die Rohrweite hat sich verringert</span>
+            {% if en_c1_bo == 'True' %}
+                <span>{{ en_c1_be }}</span>
+        
+                    <br><span>{{ en_c1_k|join:"<br> " }}</span>
+                
+            {% endif %}
         </span>
     </div>
     <div class="damages-catalogue-container7">

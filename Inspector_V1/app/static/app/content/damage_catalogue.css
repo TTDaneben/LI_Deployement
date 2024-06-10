@@ -16,10 +16,9 @@
     display: flex;
     position: relative;
     box-shadow: 5px 5px 10px 0px #bebdbd;
-    align-items: start;
+    align-items: flex-start;
     border-radius: 10px;
-    flex-direction: column;
-    justify-content: start;
+    justify-content: left;
     background-color: #f5fafd;
     padding-top: var(--space-oneandhalfunits);
     padding-left: var(--space-twounits);
@@ -27,14 +26,14 @@
     padding-bottom: var(--space-oneandhalfunits);
     margin-bottom: var(--space-twounits);
 }
-}
+
 
 .damages-container1 {
     width: auto;
     display: flex;
     position: relative;
-    box-shadow: 8px 8px 10px 5px #bebdbd;
-    align-items: center;
+    box-shadow: 5px 5px 10px 0px #bebdbd;
+    align-items: flex-start;
     border-radius: 10px;
     flex-direction: column;
     justify-content: start;

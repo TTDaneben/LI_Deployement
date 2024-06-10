@@ -72,6 +72,7 @@ input[type="checkbox"].input-validation-error {
     font-size: 14px;
     line-height: 20px;
     border-right: 1px solid #ccc;
+    align-items: start;
 }
 
 #treeview ul.parent *:after {
