@@ -27,7 +27,7 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'Contact',
+            'title':'Kontakt',
             'message':'Your contact page.',
             'year':datetime.now().year,
         }
@@ -40,7 +40,7 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'About',
+            'title':'Über',
             'message':'Your application description page.',
             'year':datetime.now().year,
         }
@@ -101,5 +101,16 @@ def damages_kodes(request, kodes_id):
             'en_beispielKode' : en_beispielKode,
             'enb_bilder' : enb_bilder,
             'beispieleID' : beispieleID,
+        }
+    )
+
+def pic_fullscreen(request):
+
+    return render(
+        request,
+        'app/pic_fullscreen.html',
+        {
+            'title':'Bildkatalog',
+            'year':datetime.now().year,
         }
     )

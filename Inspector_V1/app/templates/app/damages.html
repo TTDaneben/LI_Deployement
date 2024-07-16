@@ -30,7 +30,7 @@
 
 <p>Hier ist der Schadenskatalog zu finden.</p>
 
-<div class="row align-items-start" id="treeview">
+<div class="row" id="treeview">
     <div class="col-sm-4">
         <div class="damages-container section-padding">
                 <ul>
@@ -87,10 +87,8 @@
                 </ul>
         </div>
         <div>
-            <div class="damages-container image-grid">
-                {% block pictures %}
-                {% endblock %}
-            </div>
+            {% block pictures %}
+            {% endblock %}
         </div>
     </div>
     <div class="col-sm-8">
