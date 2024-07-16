@@ -53,7 +53,7 @@ class EnKode(models.Model):
         db_table = 'EN_Kode'
 
 class EnBeispielkode(models.Model):
-    enk_id = models.TextField(db_column='ENK_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enk_id = models.TextField(db_column='ENK_ID', blank=True, null=False, primary_key = True)  # Field name made lowercase. This field type is a guess.
     enk_enbid = models.TextField(db_column='ENK_ENBID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     enk_kode = models.TextField(db_column='ENK_Kode', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     enk_c1 = models.TextField(db_column='ENK_C1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
@@ -75,7 +75,7 @@ class EnBeispielkode(models.Model):
 
 
 class EnBeispiele(models.Model):
-    enb_id = models.TextField(db_column='ENB_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enb_id = models.TextField(db_column='ENB_ID', blank=True, null=False, primary_key= True)  # Field name made lowercase. This field type is a guess.
     enb_enid = models.TextField(db_column='ENB_ENID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     enb_bild = models.TextField(db_column='ENB_Bild', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
     enb_druck = models.TextField(db_column='ENB_druck', blank=True, null=True)  # Field name made lowercase. This field type is a guess.

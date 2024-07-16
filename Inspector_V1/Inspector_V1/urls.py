@@ -11,10 +11,10 @@ from app import forms, views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('contact/', views.contact, name='contact'),
-    path('about/', views.about, name='about'),
-    path('damages/', views.damages, name='damages'),
-    path('damages/<int:kodes_id>/', views.damages_kodes, name='clicked_kode'),
+    path('Kontakt/', views.contact, name='contact'),
+    path('Über/', views.about, name='about'),
+    path('Schadenskatalog/', views.damages, name='damages'),
+    path('Schadenskatalog/<int:kodes_id>/', views.damages_kodes, name='clicked_kode'),
     path('login/',
          LoginView.as_view
          (

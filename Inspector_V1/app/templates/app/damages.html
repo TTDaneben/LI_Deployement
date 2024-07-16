@@ -88,7 +88,9 @@
         </div>
         <div>
             <div class="damages-container section-padding">
-                <img alt="Schadensbild" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bild }}" width="375" height="298">
+                {% block pictures %}
+                    
+                {% endblock %}
             </div>
         </div>
     </div>

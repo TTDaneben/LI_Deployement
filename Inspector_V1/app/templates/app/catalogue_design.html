@@ -60,5 +60,12 @@
 </div>
 </div>
 
-
 {% endblock %}
+
+{% block pictures %}
+        {% for beispiel in enb_bilder %}
+        <img alt="{{ beispiel.enb_bild }}" src="{% static 'app/content/Schadensbilder/' %}{{ beispiel.enb_bild }}" width="375" height="298">
+        {% endfor %}
+{% endblock %}
+
+

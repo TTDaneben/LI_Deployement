@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from app.models import EnKapitel, EnKode, EnC1, EN_Beispiele, EN_BeispielKode
+from app.models import EnKapitel, EnKode, EnC1, EnBeispiele, EnBeispielkode
 from django.urls import reverse
 
 def home(request):
@@ -46,13 +46,11 @@ def about(request):
         }
     )
 
-def damages(request, kodes_id):
+def damages(request):
     """Renders the damages page."""
     assert isinstance(request, HttpRequest)
     en_kode_kapitel = EnKapitel.objects.using('KodeDB').all()
     en_hauptkode = EnKode.objects.using('KodeDB').all()
-    en_filtrd = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_hauptkode
-    enb_bild = EN_Beispiele
    
     return render(
         request,
@@ -63,8 +61,6 @@ def damages(request, kodes_id):
             'year':datetime.now().year,
             'en_kode_kapitel': en_kode_kapitel,
             'en_hauptkode': en_hauptkode,
-            'en_filtrd': en_filtrd,
-            'enb_bild' : enb_bild,
         }
         
     )
@@ -79,6 +75,11 @@ def damages_kodes(request, kodes_id):
     en_c1_text = EnC1.objects.using('KodeDB').filter(enc1_child=kodes_id).values('enc1_kurz', 'enc1_text', 'enc1_lang')
     en_c1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c1
     en_c1_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c1text
+    en_beispielKode = EnBeispielkode.objects.using('KodeDB').filter(enk_kode=en_filtrd)
+    beispieleID = []
+    for beispiele in en_beispielKode:
+        beispieleID.append(beispiele.enk_enbid)
+    enb_bilder = EnBeispiele.objects.using('KodeDB').filter(enb_id__in=beispieleID)
 
     return render(
         request, 
@@ -97,6 +98,8 @@ def damages_kodes(request, kodes_id):
             'en_c1_bo': en_c1_bo,
             'en_c1_text' : en_c1_text,
             'en_c1_be' : en_c1_be,
-
+            'en_beispielKode' : en_beispielKode,
+            'enb_bilder' : enb_bilder,
+            'beispieleID' : beispieleID,
         }
     )
