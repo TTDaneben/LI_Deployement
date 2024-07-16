@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from app.models import EnKapitel, EnKode, EnC1
+from app.models import EnKapitel, EnKode, EnC1, EN_Beispiele, EN_BeispielKode
 from django.urls import reverse
 
 def home(request):
@@ -46,11 +46,13 @@ def about(request):
         }
     )
 
-def damages(request):
+def damages(request, kodes_id):
     """Renders the damages page."""
     assert isinstance(request, HttpRequest)
     en_kode_kapitel = EnKapitel.objects.using('KodeDB').all()
     en_hauptkode = EnKode.objects.using('KodeDB').all()
+    en_filtrd = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_hauptkode
+    enb_bild = EN_Beispiele
    
     return render(
         request,
@@ -61,6 +63,8 @@ def damages(request):
             'year':datetime.now().year,
             'en_kode_kapitel': en_kode_kapitel,
             'en_hauptkode': en_hauptkode,
+            'en_filtrd': en_filtrd,
+            'enb_bild' : enb_bild,
         }
         
     )

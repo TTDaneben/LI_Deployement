@@ -86,6 +86,11 @@
                 </li>
                 </ul>
         </div>
+        <div>
+            <div class="damages-container section-padding">
+                <img alt="Schadensbild" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bild }}" width="375" height="298">
+            </div>
+        </div>
     </div>
     <div class="col-sm-8">
         {% block catalogue %}
@@ -98,11 +103,6 @@
             </div>
     	</div>
         {% endblock %}
-    </div>
-    <div class="col-sm-4">
-        <div class="damages-container section-padding">
-            <img alt="Schadensbild 1" src="{% static 'app/content/Schadensbilder/0001.JPG' %}" width="250" height="250">
-        </div>
     </div>
 </div>
 {% endblock %}
