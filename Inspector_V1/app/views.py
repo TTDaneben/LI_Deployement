@@ -75,6 +75,7 @@ def damages_kodes(request, kodes_id):
     en_c1_text = EnC1.objects.using('KodeDB').filter(enc1_child=kodes_id).values('enc1_kurz', 'enc1_text', 'enc1_lang')
     en_c1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c1
     en_c1_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c1text
+    en_l1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_l1
     en_beispielKode = EnBeispielkode.objects.using('KodeDB').filter(enk_kode=en_filtrd)
     beispieleID = []
     for beispiele in en_beispielKode:
@@ -96,6 +97,7 @@ def damages_kodes(request, kodes_id):
             'kurztext': en_kt,
             'beschreibung': en_bschr,
             'en_c1_bo': en_c1_bo,
+            'en_l1_bo' : en_l1_bo,
             'en_c1_text' : en_c1_text,
             'en_c1_be' : en_c1_be,
             'en_beispielKode' : en_beispielKode,
