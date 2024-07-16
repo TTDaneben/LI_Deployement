@@ -289,3 +289,16 @@
     color: #191818;
     width: 100%;
 }
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%,1fr));
+    grid-gap: 5px;
+    width: 100%;
+  }
+  
+.image-grid-item {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
