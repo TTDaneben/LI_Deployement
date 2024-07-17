@@ -99,6 +99,7 @@
 
 .damages-catalogue-text {
     align-self: flex-start;
+    text-align: left;
     margin-left: var(--space-halfunit);
     font-weight: normal;
 }

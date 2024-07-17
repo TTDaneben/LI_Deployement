@@ -81,6 +81,7 @@ def damages_kodes(request, kodes_id):
     en_c2_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c2
     en_c2_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c2text
     en_l2_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_l2
+    en_sa_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_sa
     en_q1_text = EnQ1.objects.using('KodeDB').filter(enq1_child=kodes_id).values('enq1_dim', 'enq1_kurz', 'enq1_lang')
     en_q1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q1
     en_q1_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q1text
@@ -125,6 +126,7 @@ def damages_kodes(request, kodes_id):
             'en_q2_bo' : en_q2_bo,
             'en_q2_text' : en_q2_text,
             'en_q2_be' : en_q2_be,
+            'en_sa_bo' : en_sa_bo,
         }
     )
 

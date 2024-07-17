@@ -37,14 +37,14 @@
     <div class="damages-catalogue-container6">
         <label class="damages-catalogue-text14">Charakterisierung 1</label>
         <span class="damages-catalogue-text15">
-                <span>{{ en_c1_be }}</span>
-                    {% for items in en_c1_text %}
-                        {% if items.enc1_lang != "" %}
-                            <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }} - {{ items.enc1_lang }}</span>
-                        {% else %}
-                            <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }}</span>
-                        {% endif %}
-                    {% endfor %}
+            <span>{{ en_c1_be }}</span>
+            {% for items in en_c1_text %}
+                {% if items.enc1_lang != "" %}
+                    <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }} - {{ items.enc1_lang }}</span>
+                {% else %}
+                    <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }}</span>
+                {% endif %}
+            {% endfor %}
         </span>
     </div>
     {% endif %}
@@ -84,15 +84,20 @@
     </div>
     {% endif %}
     {% if en_lage != "" %}
-    <div class="damages-catalogue-container8">
+    <div class="damages-catalogue-container7">
         <label class="damages-catalogue-text23">Lage am Umfang</label>
         <span class="damages-catalogue-text24">
             {{ en_lage }}
         </span>
     </div>
     {% endif %}
+    {% if en_sa_bo == "True" %}
+    <div class="damages-catalogue-container7">
+        <button class="damages-catalogue-text15 btn" style="background-color: #007dc5; color: #ffffff" onclick="window.open('https://example.com', '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100,width=1500,height=800')">Standartisierte Anmerkung anzeigen</button>
+    </div>
+    {% endif %}
 </div>
-</div>
+
 
 {% endblock %}
 
