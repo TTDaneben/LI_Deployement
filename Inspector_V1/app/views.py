@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from app.models import EnKapitel, EnKode, EnC1, EnBeispiele, EnBeispielkode
+from app.models import EnKapitel, EnKode, EnC1, EnC2, EnQ1, EnQ2, EnBeispiele, EnBeispielkode
 from django.urls import reverse
 
 def home(request):
@@ -72,10 +72,21 @@ def damages_kodes(request, kodes_id):
     en_filtrd = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_hauptkode
     en_kt = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_lang
     en_bschr = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_beschreibung
+    en_lage = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_lagetext
     en_c1_text = EnC1.objects.using('KodeDB').filter(enc1_child=kodes_id).values('enc1_kurz', 'enc1_text', 'enc1_lang')
     en_c1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c1
     en_c1_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c1text
     en_l1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_l1
+    en_c2_text = EnC2.objects.using('KodeDB').filter(enc2_child=kodes_id).values('enc2_kurz', 'enc2_text', 'enc2_lang')
+    en_c2_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c2
+    en_c2_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_c2text
+    en_l2_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_l2
+    en_q1_text = EnQ1.objects.using('KodeDB').filter(enq1_child=kodes_id).values('enq1_dim', 'enq1_kurz', 'enq1_lang')
+    en_q1_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q1
+    en_q1_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q1text
+    en_q2_text = EnQ2.objects.using('KodeDB').filter(enq2_child=kodes_id).values('enq2_dim', 'enq2_kurz', 'enq2_lang')
+    en_q2_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q2
+    en_q2_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q2text
     en_beispielKode = EnBeispielkode.objects.using('KodeDB').filter(enk_kode=en_filtrd)
     beispieleID = []
     for beispiele in en_beispielKode:
@@ -96,6 +107,7 @@ def damages_kodes(request, kodes_id):
             'en_filtrd': en_filtrd,
             'kurztext': en_kt,
             'beschreibung': en_bschr,
+            'en_lage' : en_lage,
             'en_c1_bo': en_c1_bo,
             'en_l1_bo' : en_l1_bo,
             'en_c1_text' : en_c1_text,
@@ -103,6 +115,16 @@ def damages_kodes(request, kodes_id):
             'en_beispielKode' : en_beispielKode,
             'enb_bilder' : enb_bilder,
             'beispieleID' : beispieleID,
+            'en_c2_bo': en_c2_bo,
+            'en_l2_bo' : en_l2_bo,
+            'en_c2_text' : en_c2_text,
+            'en_c2_be' : en_c2_be,
+            'en_q1_bo' : en_q1_bo,
+            'en_q1_text' : en_q1_text,
+            'en_q1_be' : en_q1_be,
+            'en_q2_bo' : en_q2_bo,
+            'en_q2_text' : en_q2_text,
+            'en_q2_be' : en_q2_be,
         }
     )
 

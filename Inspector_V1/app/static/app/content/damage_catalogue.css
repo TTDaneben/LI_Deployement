@@ -180,6 +180,7 @@
 .damages-catalogue-text07 {
     margin: var(--space-halfunit);
     align-self: start;
+    text-align: left;
     box-shadow: rgb(212, 212, 212) 5px 3px 10px 0px;
     font-style: normal;
     font-weight: bold;

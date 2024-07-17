@@ -113,40 +113,40 @@ class EnC1(models.Model):
         db_table = 'EN_C1'
 
 
-# class EnC2(models.Model):
-#     enc2_id = models.TextField(db_column='ENC2_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enc2_child = models.TextField(db_column='ENC2_Child', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enc2_kurz = models.TextField(db_column='ENC2_Kurz', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enc2_text = models.TextField(db_column='ENC2_Text', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enc2_lang = models.TextField(db_column='ENC2_Lang', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enc2_stan = models.TextField(db_column='ENC2_Stan', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+class EnC2(models.Model):
+    enc2_id = models.TextField(db_column='ENC2_ID', blank=True, null=False, primary_key = True)  # Field name made lowercase. This field type is a guess.
+    enc2_child = models.TextField(db_column='ENC2_Child', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enc2_kurz = models.TextField(db_column='ENC2_Kurz', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enc2_text = models.TextField(db_column='ENC2_Text', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enc2_lang = models.TextField(db_column='ENC2_Lang', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enc2_stan = models.TextField(db_column='ENC2_Stan', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
-#     class Meta:
-#         managed = False
-#         db_table = 'EN_C2'
+    class Meta:
+        managed = False
+        db_table = 'EN_C2'
 
-# class EnQ1(models.Model):
-#     enq1_id = models.TextField(db_column='ENQ1_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq1_child = models.TextField(db_column='ENQ1_Child', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq1_dim = models.TextField(db_column='ENQ1_Dim', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq1_lang = models.TextField(db_column='ENQ1_Lang', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq1_kurz = models.TextField(db_column='ENQ1_Kurz', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+class EnQ1(models.Model):
+    enq1_id = models.TextField(db_column='ENQ1_ID', blank=True, null=False, primary_key = True)  # Field name made lowercase. This field type is a guess.
+    enq1_child = models.TextField(db_column='ENQ1_Child', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enq1_dim = models.TextField(db_column='ENQ1_Dim', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enq1_lang = models.TextField(db_column='ENQ1_Lang', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enq1_kurz = models.TextField(db_column='ENQ1_Kurz', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
-#     class Meta:
-#         managed = False
-#         db_table = 'EN_Q1'
+    class Meta:
+        managed = False
+        db_table = 'EN_Q1'
 
 
-# class EnQ2(models.Model):
-#     enq2_id = models.TextField(db_column='ENQ2_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq2_child = models.TextField(db_column='ENQ2_Child', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq2_dim = models.TextField(db_column='ENQ2_DIM', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq2_lang = models.TextField(db_column='ENQ2_Lang', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     enq2_kurz = models.TextField(db_column='ENQ2_Kurz', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+class EnQ2(models.Model):
+    enq2_id = models.TextField(db_column='ENQ2_ID', blank=True, null=False, primary_key = True)  # Field name made lowercase. This field type is a guess.
+    enq2_child = models.TextField(db_column='ENQ2_Child', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enq2_dim = models.TextField(db_column='ENQ2_DIM', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enq2_lang = models.TextField(db_column='ENQ2_Lang', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    enq2_kurz = models.TextField(db_column='ENQ2_Kurz', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
-#     class Meta:
-#         managed = False
-#         db_table = 'EN_Q2'
+    class Meta:
+        managed = False
+        db_table = 'EN_Q2'
 
 
 # class EnSanierung(models.Model):

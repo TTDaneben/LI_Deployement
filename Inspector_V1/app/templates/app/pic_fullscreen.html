@@ -1,4 +1,62 @@
 {% extends "app/layout.html" %}
 
 {% load static %}
+{% block content %}
+<div style="display: flex;">
+    <div>
+      <img src="image1.jpg" alt="Picture 1">
+      <p style="text-align: center;"><b>Picture 1</b></p>
+    </div>
+    <div>
+      <img src="image2.jpg" alt="Picture 2">
+      <p style="text-align: center;"><b>Picture 2</b></p>
+    </div>
+    <div>
+      <img src="image3.jpg" alt="Picture 3">
+      <p style="text-align: center;"><b>Picture 3</b></p>
+    </div>
+  </div>
+  
+  <table>
+    <tr>
+      <th>Kode</th>
+      <th>Char 1</th>
+      <th>Char 2</th>
+      <th>St. Anm</th>
+      <th>Quant 1</th>
+      <th>Quant 2</th>
+      <th>Verb.</th>
+      <th>Lage 1</th>
+      <th>Lage 2</th>
+      <th>Text</th>
+      <th>Anmerkung</th>
+    </tr>
+    <tr>
+      <td>BAI</td>
+      <td>A</td>
+      <td>A</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>A</td>
+      <td>10</td>
+      <td>00</td>
+      <td>Einragendes Dichtungsmaterial, Dichtring, sichtbar verschoben, jedoch nicht in die Rohrleitung hineinragend</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>BAA</td>
+      <td>B</td>
+      <td></td>
+      <td></td>
+      <td>2</td>
+      <td></td>
+      <td>A</td>
+      <td>10</td>
+      <td>00</td>
+      <td>Verformung, horizontal</td>
+      <td></td>
+    </tr>
+  </table>
 
+  {% endblock %}

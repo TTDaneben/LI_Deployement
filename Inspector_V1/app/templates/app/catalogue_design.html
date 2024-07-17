@@ -3,22 +3,28 @@
 {% load static %}
 {% block catalogue %}
 
+<!--In diesem HTML Doc wird der Schadenskatalog mit "Treeview" wie im alten KI Expert dargestellt.
+    Hierbei werden die einzelnen Container genutzt, um eine angemessene Darstellung zu wählen.
+    In den einzelnen Bereichen sind anschließend, durch Variablen aus der views.py die Daten aus der
+    Datenbank entsprechend dem ausgewählten Kode dargestellt.
+    Die einzelnen Klassenelement sind im CSS erstellt und dienen der einheitlichen Darstellung.-->
+
 <div class="damages-container1 thq-card">
     <h4 class="damages-text">
         <span>Beschreibung</span>
     </h4>
     <div class="damages-catalogue-container section-padding damages-catalogue-root-class-name">
     <div class="damages-catalogue-container1">
-        <div class="damages-catalogue-container2">
+        <div class="damages-catalogue-container2" id="Kode">
             <label class="damages-catalogue-text"><span>Kode</span></label>
                 <span class="damages-catalogue-text01">{{ en_filtrd }}</span>
         </div>
-        <div class="damages-catalogue-container3">
+        <div class="damages-catalogue-container3" id="Kurztext">
             <label class="damages-catalogue-text02"><span>Kurztext</span></label>
             <span class="damages-catalogue-text03"><span>{{ kurztext }}</span></span>
         </div>
     </div>
-    <div class="damages-catalogue-container4">
+    <div class="damages-catalogue-container4" id="Beschreibung">
         <div class="damages-catalogue-container5">
             <label class="damages-catalogue-text04">
                 <span>Beschreibung</span>
@@ -27,49 +33,71 @@
             <span class="damages-catalogue-text07"> {{ beschreibung }} <span>
         </div>
     </div>
-    {% if en_c1_bo == True %}
+    {% if en_c1_bo == "True" %} <!--Hierdurch wird sichergestellt, dass es eine Charaktersierung 1 gibt.-->
     <div class="damages-catalogue-container6">
         <label class="damages-catalogue-text14">Charakterisierung 1</label>
         <span class="damages-catalogue-text15">
-            {% if en_c1_bo == 'True' %}
                 <span>{{ en_c1_be }}</span>
                     {% for items in en_c1_text %}
-                        {% if en_l1_bo == True %}
+                        {% if items.enc1_lang != "" %}
                             <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }} - {{ items.enc1_lang }}</span>
-                             <!--Hier muss noch nen If hinzugefügt werden, en_lang nicht immer verfügbar-->
                         {% else %}
                             <br><span>{{ items.enc1_kurz }} - {{ items.enc1_text }}</span>
                         {% endif %}
                     {% endfor %}
-            {% endif %}
         </span>
     </div>
     {% endif %}
-    <div class="damages-catalogue-container7">
-        <label class="damages-catalogue-text21">Quantifizierung 1</label>
-        <span class="damages-catalogue-text22">
-            Die prozentuale Reduzierung der Abmessung. Die Ermittlung des Wertes
-            zur Quantifizierung der prozentualen Reduzierung der Abmessung kann
-            fuer Kreisprofile am Bildschirm massstabsunabhaengig wie folgt
-            vorgenommen werden: Erfassung der Werte dmax und dmin an gleicher
-            Station (etwa rechtwinklig zueinander), Berechnung (softwareintern):
-            dm = (dmax + dmin) / 2, Verformung = (dmax - dm) / dm x 100 in %
-            Abmessung.
+    {% if en_c2_bo == "True" %} <!--Hierdurch wird sichergestellt, dass es eine Charaktersierung 2 gibt.-->
+    <div class="damages-catalogue-container6">
+        <label class="damages-catalogue-text14">Charakterisierung 2</label>
+        <span class="damages-catalogue-text15">
+                <span>{{ en_c2_be }}</span>
+                    {% for items in en_c2_text %}
+                        {% if items.enc2_lang != "" %}
+                            <br><span>{{ items.enc2_kurz }} - {{ items.enc2_text }} - {{ items.enc2_lang }}</span>
+                        {% else %}
+                            <br><span>{{ items.enc2_kurz }} - {{ items.enc2_text }}</span>
+                        {% endif %}
+                    {% endfor %}
         </span>
     </div>
+    {% endif %}
+    {% if en_q1_bo == "True" %} <!--Hierdurch wird sichergestellt, dass es eine Charaktersierung 2 gibt.-->
+    <div class="damages-catalogue-container7">
+        <label class="damages-catalogue-text21">Quantifizierung 1</label>
+        <span class="damages-catalogue-text15">
+                    {% for items in en_q1_text %}
+                            <span>{{ items.enq1_lang }}</span> <!--Der Text ist leider noch nicht richtig formatiert, hier muss noch rangegangen werden.-->
+                    {% endfor %}
+        </span>
+    </div>
+    {% endif %}
+    {% if en_q2_bo == "True" %} <!--Hierdurch wird sichergestellt, dass es eine Charaktersierung 2 gibt.-->
+    <div class="damages-catalogue-container7">
+        <label class="damages-catalogue-text21">Quantifizierung 2</label>
+        <span class="damages-catalogue-text15">
+                    {% for items in en_q2_text %}
+                            <span>{{ items.enq2_lang }}</span> <!--Der Text ist leider noch nicht richtig formatiert, hier muss noch rangegangen werden.-->
+                    {% endfor %}
+        </span>
+    </div>
+    {% endif %}
+    {% if en_lage != "" %}
     <div class="damages-catalogue-container8">
         <label class="damages-catalogue-text23">Lage am Umfang</label>
         <span class="damages-catalogue-text24">
-            Die Lage sollte aufgezeichnet werden, wenn die Verformung
-            lokalisiert ist
+            {{ en_lage }}
         </span>
     </div>
+    {% endif %}
 </div>
 </div>
 
 {% endblock %}
 
 {% block pictures %}
+    {% if enb_bilder|length > 0 %}
     <div class="damages-container image-grid">        
         {% for beispiel in enb_bilder %}
             <div class="image-grid-item">
@@ -77,6 +105,7 @@
             </div>
         {% endfor %}
     </div>
+    {% endif %}
 {% endblock %}
 
 
