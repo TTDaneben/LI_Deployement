@@ -54,6 +54,9 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="Inspector_V1\" />
+    <Folder Include="static\" />
+    <Folder Include="static\app\" />
+    <Folder Include="static\app\content\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\static\app\content\damage_catalogue.css" />
@@ -93,6 +96,8 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="static\app\content\minus-frame-svg.svg" />
+    <Content Include="static\app\content\plus-frame-svg.svg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

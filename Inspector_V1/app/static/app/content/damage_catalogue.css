@@ -10,6 +10,31 @@
     --normal: 350;
 }
 
+.hidden-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden-link:hover {
+    text-decoration: none;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid blue;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 .damages-container {
     width: auto;
     height: auto;

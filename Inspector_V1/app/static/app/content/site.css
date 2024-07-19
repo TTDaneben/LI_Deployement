@@ -67,7 +67,17 @@ input[type="checkbox"].input-validation-error {
 
 /*Setting the style for the treeview*/
 
-#treeview {
+#tree {
+    cursor: pointer;
+    list-style-image: url("minus-frame-svg.svg");
+}
+
+#parent {
+    cursor: pointer;
+    list-style-image: url("plus-frame-svg.svg");
+}
+
+treeview {
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -75,13 +85,10 @@ input[type="checkbox"].input-validation-error {
     align-items: start;
 }
 
-#treeview ul.parent *:after {
-    list-style: url("plus-frame-svg.svg");
-    padding-left: 15px;
-    margin-bottom: 0;
-}
-#treeview ul.parent.open *:after{
-    list-style: url("minus-frame-svg.svg");
-    padding-left: 15px;
+treeview li {
+
+    background-position: 0 0;
+    background-size: 18px 18px;
+    padding-left: 25px;
     margin-bottom: 0;
 }
