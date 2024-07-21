@@ -92,7 +92,7 @@ def damages_kodes(request, kodes_id):
     beispieleID = []
     for beispiele in en_beispielKode:
         beispieleID.append(beispiele.enk_enbid)
-    enb_bilder = EnBeispiele.objects.using('KodeDB').filter(enb_id__in=beispieleID)
+    enb_bilder = EnBeispiele.objects.using('KodeDB').filter(enb_id__in=beispieleID).exclude(enb_id='87')
 
     return render(
         request, 
@@ -130,13 +130,39 @@ def damages_kodes(request, kodes_id):
         }
     )
 
-def pic_fullscreen(request):
+def pic_fullscreen(request, enb_enid):
+     en_hauptkode = EnKode.objects.using('KodeDB').all()
+     en_filtrd = EnKode.objects.using('KodeDB').get(en_id=enb_enid).en_hauptkode
+     en_beispielKode = EnBeispielkode.objects.using('KodeDB').filter(enk_kode=en_filtrd)
+     beispieleID = []
+     for beispiele in en_beispielKode:
+        beispieleID.append(beispiele.enk_enbid)
+     enb_bilder = EnBeispiele.objects.using('KodeDB').filter(enb_id__in=beispieleID).exclude(enb_id='87')
 
-    return render(
+     return render(
         request,
         'app/pic_fullscreen.html',
         {
             'title':'Bildkatalog',
             'year':datetime.now().year,
+            'enb_enid': enb_enid,
+            'en_hauptkode': en_hauptkode,
+            'en_filtrd': en_filtrd,
+            'enb_bilder': enb_bilder,
+            'en_beispielKode' : en_beispielKode,
+        }
+    )
+
+def bildkatalog(request):
+    schadensbilder = EnBeispiele.objects.using('KodeDB').order_by('enb_bild').exclude(enb_id='87').all()
+    
+    return render(
+        request,
+        'app/bildkatalog.html',
+        {
+            'title':'Bildkatalog',
+            'year':datetime.now().year,
+            'schadensbilder': schadensbilder,
+            
         }
     )

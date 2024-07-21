@@ -63,6 +63,7 @@
     <Content Include="app\static\app\content\Logo_DWA.png" />
     <Content Include="app\static\app\content\minus-frame-svg.svg" />
     <Content Include="app\static\app\content\plus-frame-svg.svg" />
+    <Content Include="app\templates\app\bildkatalog.html" />
     <Content Include="app\templates\app\catalogue_design.html" />
     <Content Include="app\templates\app\damages.html" />
     <Content Include="KodeDB.sqlite" />

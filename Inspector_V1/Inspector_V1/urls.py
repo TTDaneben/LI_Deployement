@@ -15,7 +15,8 @@ urlpatterns = [
     path('Über/', views.about, name='about'),
     path('Schadenskatalog/', views.damages, name='damages'),
     path('Schadenskatalog/<int:kodes_id>/', views.damages_kodes, name='clicked_kode'),
-    path('Bildkatalog/', views.pic_fullscreen, name='pic_fullscreen'),
+    path('Bildkatalog/', views.bildkatalog, name='bildkatalog'),
+    path('Bildkatalog/<int:enb_enid>/', views.pic_fullscreen, name='pic_fullscreen'),
     path('login/',
          LoginView.as_view
          (

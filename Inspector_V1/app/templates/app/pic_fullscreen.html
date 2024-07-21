@@ -1,62 +1,90 @@
 {% extends "app/layout.html" %}
 
 {% load static %}
-{% block content %}
-<div style="display: flex;">
-    <div>
-      <img src="image1.jpg" alt="Picture 1">
-      <p style="text-align: center;"><b>Picture 1</b></p>
-    </div>
-    <div>
-      <img src="image2.jpg" alt="Picture 2">
-      <p style="text-align: center;"><b>Picture 2</b></p>
-    </div>
-    <div>
-      <img src="image3.jpg" alt="Picture 3">
-      <p style="text-align: center;"><b>Picture 3</b></p>
-    </div>
-  </div>
-  
-  <table>
-    <tr>
-      <th>Kode</th>
-      <th>Char 1</th>
-      <th>Char 2</th>
-      <th>St. Anm</th>
-      <th>Quant 1</th>
-      <th>Quant 2</th>
-      <th>Verb.</th>
-      <th>Lage 1</th>
-      <th>Lage 2</th>
-      <th>Text</th>
-      <th>Anmerkung</th>
-    </tr>
-    <tr>
-      <td>BAI</td>
-      <td>A</td>
-      <td>A</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>A</td>
-      <td>10</td>
-      <td>00</td>
-      <td>Einragendes Dichtungsmaterial, Dichtring, sichtbar verschoben, jedoch nicht in die Rohrleitung hineinragend</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>BAA</td>
-      <td>B</td>
-      <td></td>
-      <td></td>
-      <td>2</td>
-      <td></td>
-      <td>A</td>
-      <td>10</td>
-      <td>00</td>
-      <td>Verformung, horizontal</td>
-      <td></td>
-    </tr>
-  </table>
+{% block scripts %}
+<script>
+const gallery = document.querySelector('.gallery');
+const mainImage = document.querySelector('#main-image');
+const nextBtn = document.querySelector('#next-btn');
+const imageList = document.querySelector('#image-list');
+const images = imageList.querySelectorAll('li');
 
+let currentIndex = 0;
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  updateMainImage();
+});
+
+function updateMainImage() {
+  const currentImage = images[currentIndex].querySelector('img');
+  mainImage.src = currentImage.src;
+  mainImage.alt = currentImage.alt;
+    }
+
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div class="damages-container">
+<div class="gallery">
+    <div class="main-image">
+        <img alt="{{ enb_bilder.0.enb_bild }}" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bilder.0.enb_bild }}" class="image-grid-item" oncontextmenu="return false;" id="main-image">
+    </div>
+
+    <button class="nav-btn" id="next-btn">Nachstes Bild</button>
+
+    <ul class="image-list" id="image-list" style="display: none;">
+        {% for pictures in enb_bilder %}
+        <li><img src="{% static 'app/content/Schadensbilder/' %}{{pictures.enb_bild}}" alt="{{ pictures.enb_bild }}"></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<table>
+    <tr>
+        <th>Kode</th>
+        <th>Char 1</th>
+        <th>Char 2</th>
+        <th>St. Anm</th>
+        <th>Quant 1</th>
+        <th>Quant 2</th>
+        <th>Verb.</th>
+        <th>Lage 1</th>
+        <th>Lage 2</th>
+        <th>Text</th>
+        <th>Anmerkung</th>
+    </tr>
+    <tr>
+        <td>BAI</td>
+        <td>A</td>
+        <td>A</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>A</td>
+        <td>10</td>
+        <td>00</td>
+        <td>Einragendes Dichtungsmaterial, Dichtring, sichtbar verschoben, jedoch nicht in die Rohrleitung hineinragend</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>BAA</td>
+        <td>B</td>
+        <td></td>
+        <td></td>
+        <td>2</td>
+        <td></td>
+        <td>A</td>
+        <td>10</td>
+        <td>00</td>
+        <td>Verformung, horizontal</td>
+        <td></td>
+    </tr>
+</table>
+</div>
   {% endblock %}
