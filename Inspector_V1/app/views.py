@@ -150,6 +150,7 @@ def pic_fullscreen(request, enb_enid):
             'en_filtrd': en_filtrd,
             'enb_bilder': enb_bilder,
             'en_beispielKode' : en_beispielKode,
+            'beispieleID' : beispieleID,
         }
     )
 
