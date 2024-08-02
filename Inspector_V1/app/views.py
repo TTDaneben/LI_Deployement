@@ -167,3 +167,15 @@ def bildkatalog(request):
             
         }
     )
+
+def stdAnmerkung(request, kodes_id):
+
+    return render(
+        request,
+        'app/standardAnmerkung.html',
+        {
+            'title': 'Standard Anmerkung',
+            'year' : datetime.now().year,
+            'kodes' : kodes_id,
+        }
+    )

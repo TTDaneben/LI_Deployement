@@ -48,7 +48,7 @@
                                         {% for kodes in en_hauptkode %}
                                         {% if kapitel.enkap_id == kodes.en_child %}
                                         <li> 
-                                            <a class="hidden-link" href="{% url 'clicked_kode' kodes.en_id %}">{{ kodes.en_hauptkode }}                 {{ kodes.en_lang }}</a>
+                                            <a class="hidden-link" href="{% url 'clicked_kode' kodes.en_id %}">{{ kodes.en_hauptkode }} {{ kodes.en_lang }}</a>
                                         </li>
                                         {% endif %}
                                         {% endfor %}

@@ -17,6 +17,7 @@ urlpatterns = [
     path('Schadenskatalog/<int:kodes_id>/', views.damages_kodes, name='clicked_kode'),
     path('Bildkatalog/', views.bildkatalog, name='bildkatalog'),
     path('Bildkatalog/<int:enb_enid>/', views.pic_fullscreen, name='pic_fullscreen'),
+    path('Schadenskatalog/<int:kodes_id>/standardAnmerkung/', views.stdAnmerkung, name='stdAnmerkung'),
     path('login/',
          LoginView.as_view
          (

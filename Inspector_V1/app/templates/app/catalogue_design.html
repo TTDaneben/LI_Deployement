@@ -93,7 +93,7 @@
     {% endif %}
     {% if en_sa_bo == "True" %}
     <div class="damages-catalogue-container7">
-        <button class="damages-catalogue-text15 btn" style="background-color: #007dc5; color: #ffffff" onclick="window.open('https://example.com', '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=100,width=1500,height=800')">Standartisierte Anmerkung anzeigen</button>
+        <button class="damages-catalogue-text15 btn" style="background-color: #007dc5; color: #ffffff" onclick="window.open('{% url 'stdAnmerkung' kodes %}', '_blank', 'toolbar=yes,scrollbars=yes,resizable=no,top=100,left=100,width=800,height=700')">standartisierte Anmerkung anzeigen</button> <!---->
     </div>
     {% endif %}
 </div>
