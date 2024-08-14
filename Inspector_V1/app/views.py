@@ -130,14 +130,10 @@ def damages_kodes(request, kodes_id):
         }
     )
 
-def pic_fullscreen(request, enb_enid):
-     en_hauptkode = EnKode.objects.using('KodeDB').all()
-     en_filtrd = EnKode.objects.using('KodeDB').get(en_id=enb_enid).en_hauptkode
-     en_beispielKode = EnBeispielkode.objects.using('KodeDB').filter(enk_kode=en_filtrd)
-     beispieleID = []
-     for beispiele in en_beispielKode:
-        beispieleID.append(beispiele.enk_enbid)
-     enb_bilder = EnBeispiele.objects.using('KodeDB').filter(enb_id__in=beispieleID).exclude(enb_id='87')
+def pic_fullscreen(request, enb_id):
+     enb_bilder = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_bild
+     enid_bild = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_enid
+     enids = EnBeispiele.objects.using('KodeDB').filter(enb_enid = enid_bild)
 
      return render(
         request,
@@ -145,12 +141,8 @@ def pic_fullscreen(request, enb_enid):
         {
             'title':'Bildkatalog',
             'year':datetime.now().year,
-            'enb_enid': enb_enid,
-            'en_hauptkode': en_hauptkode,
-            'en_filtrd': en_filtrd,
-            'enb_bilder': enb_bilder,
-            'en_beispielKode' : en_beispielKode,
-            'beispieleID' : beispieleID,
+            'enb_bilder':enb_bilder,
+            'enids': enids,
         }
     )
 

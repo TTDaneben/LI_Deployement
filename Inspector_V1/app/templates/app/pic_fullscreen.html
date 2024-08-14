@@ -33,13 +33,13 @@ function updateMainImage() {
 <div class="damages-container">
 <div class="gallery">
     <div class="main-image">
-        <img alt="{{ enb_bilder.0.enb_bild }}" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bilder.0.enb_bild }}" class="image-grid-item" oncontextmenu="return false;" id="main-image">
+        <img alt="{{ enb_bilder }}" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bilder }}" class="image-grid-item" oncontextmenu="return false;" id="main-image">
     </div>
 
     <button class="nav-btn" id="next-btn">Nachstes Bild</button>
 
     <ul class="image-list" id="image-list" style="display: none;">
-        {% for pictures in enb_bilder %}
+        {% for pictures in enids %}
         <li><img src="{% static 'app/content/Schadensbilder/' %}{{pictures.enb_bild}}" alt="{{ pictures.enb_bild }}"></li>
         {% endfor %}
     </ul>
@@ -71,20 +71,9 @@ function updateMainImage() {
         <td>00</td>
         <td>Einragendes Dichtungsmaterial, Dichtring, sichtbar verschoben, jedoch nicht in die Rohrleitung hineinragend</td>
         <td></td>
+
     </tr>
-    <tr>
-        <td>BAA</td>
-        <td>B</td>
-        <td></td>
-        <td></td>
-        <td>2</td>
-        <td></td>
-        <td>A</td>
-        <td>10</td>
-        <td>00</td>
-        <td>Verformung, horizontal</td>
-        <td></td>
-    </tr>
+
 </table>
 </div>
   {% endblock %}

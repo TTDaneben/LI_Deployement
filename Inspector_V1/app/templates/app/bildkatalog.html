@@ -6,7 +6,7 @@
 <div class="damages-container image-grid" style="grid-template-columns: repeat(auto-fit, minmax(10%,1fr))">
     {% for pictures in schadensbilder %}
     <div class="image-grid-item">
-        <a href="{% url 'pic_fullscreen' pictures.enb_enid %}" class="hidden-link">
+        <a href="{% url 'pic_fullscreen' pictures.enb_id %}" class="hidden-link">
             <img alt="{{ pictures.enb_bild }}" src="{% static 'app/content/Schadensbilder/' %}{{ pictures.enb_bild }}" class="image-grid-item"  oncontextmenu="return false;">
         </a>
     </div>
