@@ -133,7 +133,7 @@ def damages_kodes(request, kodes_id):
 def pic_fullscreen(request, enb_id):
      enb_bilder = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_bild
      enid_bild = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_enid
-     enids = EnBeispiele.objects.using('KodeDB').filter(enb_enid = enid_bild)
+     enids = EnBeispiele.objects.using('KodeDB').filter(enb_enid = enid_bild).exclude(enb_id='87')
      enk_id = EnBeispielkode.objects.using('KodeDB').filter(enk_enbid = enb_id)
 
      return render(
