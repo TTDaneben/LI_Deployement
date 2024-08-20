@@ -134,6 +134,7 @@ def pic_fullscreen(request, enb_id):
      enb_bilder = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_bild
      enid_bild = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_enid
      enids = EnBeispiele.objects.using('KodeDB').filter(enb_enid = enid_bild)
+     enk_id = EnBeispielkode.objects.using('KodeDB').filter(enk_enbid = enb_id)
 
      return render(
         request,
@@ -143,6 +144,7 @@ def pic_fullscreen(request, enb_id):
             'year':datetime.now().year,
             'enb_bilder':enb_bilder,
             'enids': enids,
+            'enk_id' : enk_id,
         }
     )
 

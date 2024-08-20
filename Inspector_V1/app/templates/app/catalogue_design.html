@@ -106,7 +106,7 @@
     <div class="damages-container image-grid">        
         {% for beispiel in enb_bilder %}
             <div class="image-grid-item">
-                <a href="{% url 'pic_fullscreen' beispiel.enb_enid %}" class="hidden-link">
+                <a href="{% url 'pic_fullscreen' beispiel.enb_id %}" class="hidden-link">
                     <img alt="{{ beispiel.enb_bild }}" src="{% static 'app/content/Schadensbilder/' %}{{ beispiel.enb_bild }}" class="image-grid-item">
                 </a>
             </div>
