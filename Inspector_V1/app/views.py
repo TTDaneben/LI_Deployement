@@ -162,6 +162,7 @@ def pic_fullscreen(request, enb_id):
 
 def vid_fullscreen(request, env_id):
     env_video = f"{EnVideobeispiele.objects.using('KodeDB').get(env_id = env_id).env_video.rsplit('.',1)[0]}.mp4"
+    envb_id = EnVideobeispielekode.objects.using('KodeDB').filter(envb_envid = env_id)
 
     return render(
         request,
@@ -171,6 +172,7 @@ def vid_fullscreen(request, env_id):
             'year':datetime.now().year,
             'env_id' : env_id,
             'env_video' : env_video,
+            'envb_id' : envb_id,
         }
     )
 

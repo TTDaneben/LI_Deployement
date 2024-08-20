@@ -70,7 +70,7 @@ function updateDisplay() {
     </ul> -->
 </div>
 <!-- <p id="current-index"></p> -->
-<!-- <table>
+<table>
     <tr>
         <th>Kode</th>
         <th>Char 1</th>
@@ -84,21 +84,21 @@ function updateDisplay() {
         <th>Text</th>
         <th>Anmerkung</th>
     </tr>
-    {% for kode_examp in enk_id %}
+    {% for kode_examp in envb_id %}
     <tr>
-        <td>{{ kode_examp.enk_kode }}</td>
-        <td>{{ kode_examp.enk_c1 }}</td>
-        <td>{{ kode_examp.enk_c2 }}</td>
+        <td>{{ kode_examp.envb_kode }}</td>
+        <td>{{ kode_examp.envb_c1 }}</td>
+        <td>{{ kode_examp.envb_c2 }}</td>
         <td></td>
-        <td>{{ kode_examp.enk_q1 }}</td>
-        <td>{{ kode_examp.enk_q2 }}</td>
-        <td>{{ kode_examp.enk_v }}</td>
-        <td>{{ kode_examp.enk_pos1 }}</td>
-        <td>{{ kode_examp.enk_pos2 }}</td>
-        <td>{{ kode_examp.enk_langtext }}</td>
-        <td>{{ kode_examp.enk_anmerkung }}</td>
+        <td>{{ kode_examp.envb_q1 }}</td>
+        <td>{{ kode_examp.envb_q2 }}</td>
+        <td>{{ kode_examp.envb_v }}</td>
+        <td>{{ kode_examp.envb_pos1 }}</td>
+        <td>{{ kode_examp.envb_pos2 }}</td>
+        <td>{{ kode_examp.envb_langtext }}</td>
+        <td>{{ kode_examp.envb_anmerkung }}</td>
     </tr>
     {% endfor %}
-</table> -->
+</table>
 </div>
   {% endblock %}
