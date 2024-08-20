@@ -1,0 +1,105 @@
+{% extends "app/layout.html" %}
+
+{% load static %}
+{% block scripts %}
+<!-- <script>
+const gallery = document.querySelector('.gallery');
+const mainImage = document.querySelector('#main-image');
+const nextBtn = document.querySelector('#next-btn');
+const imageList = document.querySelector('#image-list');
+const images = imageList.querySelectorAll('li');
+const totalCount = images.length;
+const currentIndexDisplay = document.querySelector('#current-index');
+
+let currentIndex = 0;
+let enbIds = [];
+
+//Get the enb_id from the image List
+images.forEach((image) => {
+  const enbId = image.querySelector('img').getAttribute('data-enb-id');
+  enbIds.push(enbId);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  updateMainImage();
+  updateURL();
+  updateDisplay();
+});
+
+function updateMainImage() {
+  const currentImage = images[currentIndex].querySelector('img');
+  mainImage.src = currentImage.src;
+  mainImage.alt = currentImage.alt;
+    }
+
+function updateURL() {
+  const currentEnbId = enbIds[currentIndex];
+  const url = '{% url 'pic_fullscreen' enb_id=0 %}'.replace('0', currentEnbId);
+  window.location.href = url;
+}
+
+function updateDisplay() {
+  document.querySelector('#current-index').textContent = `${currentIndex + 1} / ${totalCount}`;
+}
+
+
+</script> -->
+{% endblock %}
+
+{% block content %}
+
+<div class="damages-container">
+<div class="gallery">
+    <div class="main-image">
+        <p>{{ env_video }}</p>
+        <video class="image-grid-item" id="main-image" alt="{{ env_video }}" controls> 
+          <source src="{% static 'app/content/Schadensvideos/' %}{{ env_video }}" type="video/mp4">
+          Dein Browser unterstützt die Wiedergabe dieses Videos nicht!
+        </video>
+    </div>
+
+    <!-- <button class="nav-btn" id="next-btn">Nachstes Bild</button>
+
+    <ul class="image-list" id="image-list" style="display: none;">
+        {% for pictures in enids %}
+        <li><img src="{% static 'app/content/Schadensbilder/' %}{{pictures.enb_bild}}" alt="{{ pictures.enb_bild }}" data-enb-id="{{ pictures.enb_id }}"></li>
+        {% endfor %}
+    </ul> -->
+</div>
+<!-- <p id="current-index"></p> -->
+<!-- <table>
+    <tr>
+        <th>Kode</th>
+        <th>Char 1</th>
+        <th>Char 2</th>
+        <th>St. Anm</th>
+        <th>Quant 1</th>
+        <th>Quant 2</th>
+        <th>Verb.</th>
+        <th>Lage 1</th>
+        <th>Lage 2</th>
+        <th>Text</th>
+        <th>Anmerkung</th>
+    </tr>
+    {% for kode_examp in enk_id %}
+    <tr>
+        <td>{{ kode_examp.enk_kode }}</td>
+        <td>{{ kode_examp.enk_c1 }}</td>
+        <td>{{ kode_examp.enk_c2 }}</td>
+        <td></td>
+        <td>{{ kode_examp.enk_q1 }}</td>
+        <td>{{ kode_examp.enk_q2 }}</td>
+        <td>{{ kode_examp.enk_v }}</td>
+        <td>{{ kode_examp.enk_pos1 }}</td>
+        <td>{{ kode_examp.enk_pos2 }}</td>
+        <td>{{ kode_examp.enk_langtext }}</td>
+        <td>{{ kode_examp.enk_anmerkung }}</td>
+    </tr>
+    {% endfor %}
+</table> -->
+</div>
+  {% endblock %}

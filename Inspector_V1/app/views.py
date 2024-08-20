@@ -5,7 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from app.models import EnKapitel, EnKode, EnC1, EnC2, EnQ1, EnQ2, EnBeispiele, EnBeispielkode
+from app.models import EnKapitel, EnKode, EnC1, EnC2, EnQ1, EnQ2, EnBeispiele, EnBeispielkode, EnVideobeispiele, EnVideobeispielekode
 from django.urls import reverse
 
 def home(request):
@@ -89,6 +89,12 @@ def damages_kodes(request, kodes_id):
     en_q2_bo = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q2
     en_q2_be = EnKode.objects.using('KodeDB').get(en_id=kodes_id).en_q2text
     en_beispielKode = EnBeispielkode.objects.using('KodeDB').filter(enk_kode=en_filtrd)
+
+    env_id = EnVideobeispielekode.objects.using('KodeDB').filter(envb_kode = en_filtrd)
+    envb_id = []
+    for videos in env_id:
+        envb_id.append(videos.envb_envid)
+    envb_video = EnVideobeispiele.objects.using('KodeDB').filter(env_id__in = envb_id)
     beispieleID = []
     for beispiele in en_beispielKode:
         beispieleID.append(beispiele.enk_enbid)
@@ -127,6 +133,10 @@ def damages_kodes(request, kodes_id):
             'en_q2_text' : en_q2_text,
             'en_q2_be' : en_q2_be,
             'en_sa_bo' : en_sa_bo,
+
+            'env_id' : env_id,
+            'envb_video' : envb_video,
+            
         }
     )
 
@@ -135,6 +145,8 @@ def pic_fullscreen(request, enb_id):
      enid_bild = EnBeispiele.objects.using('KodeDB').get(enb_id = enb_id).enb_enid
      enids = EnBeispiele.objects.using('KodeDB').filter(enb_enid = enid_bild).exclude(enb_id='87')
      enk_id = EnBeispielkode.objects.using('KodeDB').filter(enk_enbid = enb_id)
+
+
 
      return render(
         request,
@@ -145,6 +157,18 @@ def pic_fullscreen(request, enb_id):
             'enb_bilder':enb_bilder,
             'enids': enids,
             'enk_id' : enk_id,
+        }
+    )
+
+def vid_fullscreen(request, env_id):
+    env_video = f"{EnVideobeispiele.objects.using('KodeDB').get(env_id = env_id).env_video.rsplit('.',1)[0]}.mp4"
+
+    return render(
+        request,
+        'app/vid_fullscreen.html',
+        {
+            'env_id' : env_id,
+            'env_video' : env_video,
         }
     )
 

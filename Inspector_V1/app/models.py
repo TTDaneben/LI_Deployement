@@ -239,37 +239,37 @@ class EnQ2(models.Model):
 #         db_table = 'EN_StandardAnmerkung'
 
 
-# class EnVideobeispiele(models.Model):
-#     env_idalt = models.TextField(db_column='ENV_IDalt', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     env_id = models.TextField(db_column='ENV_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     env_enobid = models.TextField(db_column='ENV_ENOBID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     env_video = models.TextField(db_column='ENV_Video', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     env_bild = models.TextField(db_column='ENV_Bild', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     env_typ = models.TextField(db_column='ENV_Typ', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     env_druck = models.TextField(db_column='ENV_Druck', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+class EnVideobeispiele(models.Model):
+    env_idalt = models.TextField(db_column='ENV_IDalt', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    env_id = models.TextField(db_column='ENV_ID', blank=True, null=False, primary_key= True)  # Field name made lowercase. This field type is a guess.
+    env_enobid = models.TextField(db_column='ENV_ENOBID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    env_video = models.TextField(db_column='ENV_Video', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    env_bild = models.TextField(db_column='ENV_Bild', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    env_typ = models.TextField(db_column='ENV_Typ', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    env_druck = models.TextField(db_column='ENV_Druck', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
-#     class Meta:
-#         managed = False
-#         db_table = 'EN_Videobeispiele'
+    class Meta:
+        managed = False
+        db_table = 'EN_Videobeispiele'
 
 
-# class EnVideobeispielekode(models.Model):
-#     envb_id = models.TextField(db_column='ENVB_ID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_envid = models.TextField(db_column='ENVB_ENVID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_kode = models.TextField(db_column='ENVB_Kode', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_c1 = models.TextField(db_column='ENVB_C1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_c2 = models.TextField(db_column='ENVB_C2', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_ca = models.TextField(db_column='ENVB_CA', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_q1 = models.TextField(db_column='ENVB_Q1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_q2 = models.TextField(db_column='ENVB_Q2', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_v = models.TextField(db_column='ENVB_V', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_pos1 = models.TextField(db_column='ENVB_Pos1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_pos2 = models.TextField(db_column='ENVB_Pos2', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_bereich = models.TextField(db_column='ENVB_Bereich', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_langtext = models.TextField(db_column='ENVB_Langtext', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_anmerkung = models.TextField(db_column='ENVB_Anmerkung', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
-#     envb_ok = models.TextField(db_column='ENVB_OK', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+class EnVideobeispielekode(models.Model):
+    envb_id = models.TextField(db_column='ENVB_ID', blank=True, null=False, primary_key=True)  # Field name made lowercase. This field type is a guess.
+    envb_envid = models.TextField(db_column='ENVB_ENVID', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_kode = models.TextField(db_column='ENVB_Kode', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_c1 = models.TextField(db_column='ENVB_C1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_c2 = models.TextField(db_column='ENVB_C2', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_ca = models.TextField(db_column='ENVB_CA', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_q1 = models.TextField(db_column='ENVB_Q1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_q2 = models.TextField(db_column='ENVB_Q2', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_v = models.TextField(db_column='ENVB_V', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_pos1 = models.TextField(db_column='ENVB_Pos1', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_pos2 = models.TextField(db_column='ENVB_Pos2', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_bereich = models.TextField(db_column='ENVB_Bereich', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_langtext = models.TextField(db_column='ENVB_Langtext', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_anmerkung = models.TextField(db_column='ENVB_Anmerkung', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
+    envb_ok = models.TextField(db_column='ENVB_OK', blank=True, null=True)  # Field name made lowercase. This field type is a guess.
 
-#     class Meta:
-#         managed = False
-#         db_table = 'EN_Videobeispielekode'
+    class Meta:
+        managed = False
+        db_table = 'EN_Videobeispielekode'

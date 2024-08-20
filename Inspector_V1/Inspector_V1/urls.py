@@ -18,6 +18,7 @@ urlpatterns = [
     path('Bildkatalog/', views.bildkatalog, name='bildkatalog'),
     path('Bildkatalog/<int:enb_id>/', views.pic_fullscreen, name='pic_fullscreen'),
     path('Schadenskatalog/<int:kodes_id>/standardAnmerkung/', views.stdAnmerkung, name='stdAnmerkung'),
+    path('Videokatalog/<int:env_id>/', views.vid_fullscreen, name='vid_fullscreen'),
     path('login/',
          LoginView.as_view
          (
