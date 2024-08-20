@@ -167,6 +167,8 @@ def vid_fullscreen(request, env_id):
         request,
         'app/vid_fullscreen.html',
         {
+            'title' : 'Videokatalog',
+            'year':datetime.now().year,
             'env_id' : env_id,
             'env_video' : env_video,
         }
