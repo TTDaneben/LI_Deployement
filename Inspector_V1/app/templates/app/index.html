@@ -3,30 +3,35 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1>Django</h1>
-    <p class="lead">Django is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <h1>LI Inspektor</h1>
+    <p class="lead">Der LI Inspektor ist eine Schulungswebsite, die dazu dient das Kodiersystem für die optische Inspektion nach DIN EN 13508-2 und DWA-M 149-2 zu erklären und zu lernen.
+        Die Schulungswebsite wurde speziell für die Unterstützung bei der Durchführung von Kanalinspektionen nach dem aktuellstem Regelwerk entwickelt. 
+        Hierbei unterstützt die Website bei der korrekten Anwendung der Kodierung, Datenprüfung- und Bearbeitung sowie Klassifizierung von Bewertungen.
+    </p>
+    <p class="lead">Die vorherige Software, der Kanalinspektions-Expert, soll dadurch ersetzt werden.</p>
+    <p><a href="https://de.dwa.de/de/kanalinspektions-expert.html" class="btn btn-primary btn-large" target="_blank">Mehr dazu &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Erste Schritte</h2>
         <p>
-            Django gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Die Schulungswebsite kann nur mit einer erworbenen Lizenz genutzt werden. Diese kann über die DWA Website oder gebuchte Weiterbildungen erworben werden.
+            Sobald eine Lizenz erworben wurde, können Sie sich hier Registrieren und die Website nutzen.
         </p>
-        <p><a class="btn btn-default" href="https://djangobook.com/django-tutorials/">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="">Registrieren &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.org/">Learn more &raquo;</a></p>
+        <h2>Kodierungskatalog</h2>
+        <p>Im Kodierungskatalog sind die Kodes für die optische Inspektion zu finden. 
+            Der Hauptkode, Beschreibung des Kodes, sowie zusätzliche Informationen könen hier eingesehen werden.</p>
+        <p><a class="btn btn-default" href="{% url 'damages' %}">Zum Bildkatalog &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+        <h2>Bildkatalog</h2>
+        <p>Der Bildkatalog dient als Überblick über alle Schadensbilder, die in der Datenbank hinterlegt sind. 
+            Über die einzelnen Bilder kann dann auf den passenden Kode zugegiffen werden.</p>
+        <p><a class="btn btn-default" href="{% url 'bildkatalog' %}">Bildkatalog &raquo;</a></p>
     </div>
 </div>
 

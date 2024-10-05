@@ -28,7 +28,7 @@ def contact(request):
         'app/contact.html',
         {
             'title':'Kontakt',
-            'message':'Your contact page.',
+            'message':'Ansprechpartner',
             'year':datetime.now().year,
         }
     )
@@ -41,13 +41,20 @@ def about(request):
         'app/about.html',
         {
             'title':'Über',
-            'message':'Your application description page.',
+            'message':'Der LI Inspektor und proSystem Ingenierbau',
             'year':datetime.now().year,
         }
     )
 
 def damages(request):
     """Renders the damages page."""
+    if not request.user.is_authenticated:
+        return render(request, "app/index.html",
+        {
+            'title':'Home Page',
+            'year':datetime.now().year,
+        }
+        )
     assert isinstance(request, HttpRequest)
     en_kode_kapitel = EnKapitel.objects.using('KodeDB').all()
     en_hauptkode = EnKode.objects.using('KodeDB').all()
@@ -59,6 +66,7 @@ def damages(request):
             'title':'Schadenskatalog',
             'message':'Kodierungen und Schadensbilder.',
             'year':datetime.now().year,
+            'current_user': request.user,
             'en_kode_kapitel': en_kode_kapitel,
             'en_hauptkode': en_hauptkode,
         }
