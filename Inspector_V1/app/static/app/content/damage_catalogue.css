@@ -35,6 +35,14 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+.standard-container {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #be1111;
+    border-radius: 6px;
+    box-shadow: inset;
+  }
+
 .damages-container {
     width: auto;
     height: auto;

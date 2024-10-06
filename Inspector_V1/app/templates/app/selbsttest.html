@@ -1,0 +1,199 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load static %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+<h4>{{ en_hauptkode }}</h4>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="damages-container">
+          <!-- Content for the first div -->
+          <h3>Bild</h3>
+          <div class="container">
+            <img src="{% static 'app/content/Schadensbilder/0001.JPG' %}" class="img-fluid img-rounded" style="max-width: 80%;">
+          </div>
+        </div>
+        <div class="rounded shadow-sm p-3 mb-3">
+          <!-- Content for the second div -->
+          <h2>Div 2</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="damages-container">
+            <!-- Content for the third div -->
+            <div class="bg-white shadow-md rounded-lg p-4 max-w-4xl mx-auto">
+                <div class="flex justify-between items-center mb-4">
+                 <h1 class="text-lg font-bold">
+                  Kodeassistent
+                 </h1>
+                </div>
+                <div class="flex">
+                 <div class="w-1/3 border-r border-gray-300 pr-4">
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Hauptkode
+                   </label>
+                  </div>
+                  <div>
+                    <form method="post">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  </div>
+                 </div>
+                 <div class="w-2/3 pl-4">
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Kodeeingabe
+                   </label>
+                  </div>
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Beschreibung
+                   </label>
+                   <textarea class="w-full border border-gray-300 p-2 h-24" readonly="">Das für die Abdichtung einer Rohrverbindung von zwei aneinandergrenzenden Rohren verwendete Dichtungsmaterial ragt ganz oder teilweise in die Rohrleitung ein.</textarea>
+                  </div>
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Charakterisierung 1
+                   </label>
+                   <select class="w-full border border-gray-300 p-2">
+                    <option>
+                     A Dichtung
+                    </option>
+                    <option>
+                     Z anderer Dichtungsart
+                    </option>
+                   </select>
+                  </div>
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Charakterisierung 2
+                   </label>
+                   <select class="w-full border border-gray-300 p-2">
+                    <option>
+                     A sichtbar verschoben, jedoch nicht in die Rohrleitung h
+                    </option>
+                    <option>
+                     B hängend, aber nicht gebrochen- oberhalb der Mitte
+                    </option>
+                    <option>
+                     C hängend, aber nicht gebrochen- unterhalb der Mitte
+                    </option>
+                    <option>
+                     D gebrochen
+                    </option>
+                   </select>
+                  </div>
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Quantifizierung
+                   </label>
+                   <textarea class="w-full border border-gray-300 p-2 h-12" readonly="">Querschnittsminderung , wenn es sich nicht um einen Dichtung handelt</textarea>
+                  </div>
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Querschnittsminderung
+                   </label>
+                   <select class="w-full border border-gray-300 p-2">
+                    <option>
+                    </option>
+                   </select>
+                  </div>
+                  <div class="mb-2">
+                   <label class="font-bold">
+                    Lage
+                   </label>
+                   <textarea class="w-full border border-gray-300 p-2 h-12" readonly="">Die Lage sollte aufgezeichnet werden</textarea>
+                  </div>
+                  <div class="mb-2 flex items-center">
+                   <input class="mr-2" id="verbindung" type="checkbox"/>
+                   <label for="verbindung">
+                    Verbindung
+                   </label>
+                  </div>
+                 </div>
+                </div>
+                <div class="mt-4 border-t border-gray-300 pt-4">
+                 <div class="flex items-center mb-2">
+                  <label class="font-bold w-24">
+                   Hauptkode
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" readonly="" type="text" value="BAI"/>
+                  <label class="font-bold w-24 ml-4">
+                   Char 1
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   Char 2
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   st. Anm
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   Quant 1
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   Quant 2
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   Lage 1
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   Lage 2
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                 </div>
+                 <div class="flex items-center mb-2">
+                  <label class="font-bold w-24">
+                   Verbindung
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                  <label class="font-bold w-24 ml-4">
+                   Bereich
+                  </label>
+                  <input class="border border-gray-300 p-2 w-16" type="text"/>
+                 </div>
+                 <div class="mb-2">
+                  <label class="font-bold">
+                   Langtext
+                  </label>
+                  <input class="border border-gray-300 p-2 w-full" type="text" value="Einragendes Dichtungsmaterial"/>
+                 </div>
+                 <div class="mb-2">
+                  <label class="font-bold">
+                   Anmerkung
+                  </label>
+                  <input class="border border-gray-300 p-2 w-full" type="text"/>
+                 </div>
+                 <div class="flex justify-between items-center">
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                   OK
+                  </button>
+                  <div class="flex items-center">
+                   <img alt="Diagram showing the position of the issue" class="mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/bl2genc3LsyWGqg97G4M5ZdeXswf2e2gSfCZn5Cfx4B86084E.jpg" width="50"/>
+                   <button class="bg-gray-300 px-4 py-2 rounded">
+                    Lage
+                   </button>
+                  </div>
+                 </div>
+                </div>
+               </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

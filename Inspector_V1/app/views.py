@@ -5,6 +5,7 @@ Definition of views.
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
+from .forms import inputKodeAssi
 from app.models import EnKapitel, EnKode, EnC1, EnC2, EnQ1, EnQ2, EnBeispiele, EnBeispielkode, EnVideobeispiele, EnVideobeispielekode
 from django.urls import reverse
 
@@ -48,13 +49,13 @@ def about(request):
 
 def damages(request):
     """Renders the damages page."""
-    if not request.user.is_authenticated:
-        return render(request, "app/index.html",
-        {
-            'title':'Home Page',
-            'year':datetime.now().year,
-        }
-        )
+    # if not request.user.is_authenticated:
+    #     return render(request, "app/index.html",
+    #     {
+    #         'title':'Home Page',
+    #         'year':datetime.now().year,
+    #     }
+    #     )
     assert isinstance(request, HttpRequest)
     en_kode_kapitel = EnKapitel.objects.using('KodeDB').all()
     en_hauptkode = EnKode.objects.using('KodeDB').all()
@@ -209,3 +210,32 @@ def stdAnmerkung(request, kodes_id):
             'kodes' : kodes_id,
         }
     )
+
+def selbsttest(request): 
+    if request.method == 'POST':
+        form = inputKodeAssi(request.POST)
+        if form.is_valid():
+            hauptkode_id = form.cleaned_data['en_hauptkode_b']
+            en_hauptkode = EnKode.objects.using('KodeDB').get(en_id = hauptkode_id).en_hauptkode
+            return render(
+            request,
+            'app/selbsttest.html',
+            {
+                'title': 'Selbsttest',
+                'year': datetime.now().year,
+                'hauptkode_id': hauptkode_id,
+                'en_hauptkode': en_hauptkode,
+                'form': form,
+            }
+        )
+    else:
+        form = inputKodeAssi()
+    return render(
+        request, 
+        'app/selbsttest.html',
+            {
+                'form': form,
+                'title': 'Selbsttest',
+                'year': datetime.now().year,
+            }           
+        )
