@@ -60,7 +60,6 @@ tr:nth-child(even) {
     margin-bottom: var(--space-twounits);
 }
 
-
 .damages-container1 {
     width: auto;
     display: flex;

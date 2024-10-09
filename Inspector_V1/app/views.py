@@ -8,6 +8,9 @@ from django.http import HttpRequest
 from .forms import inputKodeAssi
 from app.models import EnKapitel, EnKode, EnC1, EnC2, EnQ1, EnQ2, EnBeispiele, EnBeispielkode, EnVideobeispiele, EnVideobeispielekode
 from django.urls import reverse
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 def home(request):
     """Renders the home page."""
@@ -211,31 +214,80 @@ def stdAnmerkung(request, kodes_id):
         }
     )
 
-def selbsttest(request): 
+@csrf_exempt
+def selbsttest(request):
+    
     if request.method == 'POST':
-        form = inputKodeAssi(request.POST)
-        if form.is_valid():
-            hauptkode_id = form.cleaned_data['en_hauptkode_b']
-            en_hauptkode = EnKode.objects.using('KodeDB').get(en_id = hauptkode_id).en_hauptkode
-            return render(
+        leitung_bol = request.POST.get('leitung_bol')
+        return render (
             request,
-            'app/selbsttest.html',
+            'app/selbsttest.html', 
             {
                 'title': 'Selbsttest',
                 'year': datetime.now().year,
-                'hauptkode_id': hauptkode_id,
-                'en_hauptkode': en_hauptkode,
-                'form': form,
+                'leitung_bol': leitung_bol,
+                'form': inputKodeAssi(),
+
             }
         )
-    else:
-        form = inputKodeAssi()
     return render(
-        request, 
+        request,
         'app/selbsttest.html',
-            {
-                'form': form,
-                'title': 'Selbsttest',
-                'year': datetime.now().year,
-            }           
-        )
+        {
+            'title': 'Selbsttest',
+            'year': datetime.now().year,
+            'form': inputKodeAssi(),
+        }
+    )
+    # if request.method == 'POST':
+    #     leitung_bol = request.POST.get('leitung_bol', '')
+    #     hauptkode_id = form.cleaned_data['en_hauptkode_b']
+    #     en_hauptkode = EnKode.objects.using('KodeDB').get(en_id = hauptkode_id).en_hauptkode
+    #     if leitung_bol:
+    #         leitung_bol_value = calculate_leitung_bol_value(form['leitung_bol'])
+    #         return JsonResponse({'leitung_bol': leitung_bol_value}), render(
+    #         request,
+    #         'app/selbsttest.html',
+    #         {
+    #             'title': 'Selbsttest',
+    #             'year': datetime.now().year,
+    #             'hauptkode_id': hauptkode_id,
+    #             'en_hauptkode': en_hauptkode,
+    #             'form': form,
+    #         }
+    #         )
+    #     elif request.method == 'GET':
+    #         form = inputKodeAssi()
+    #         return render(
+    #             request,
+    #             'app/selbsttest.html',
+    #             {
+    #                 'title': 'Selbsttest',
+    #                 'year': datetime.now().year,
+    #                 'hauptkode_id': hauptkode_id,
+    #                 'en_hauptkode': en_hauptkode,
+    #                 'form': form,
+    #             }
+    #         )
+    #     return JsonResponse({'error': 'Invalid form data'}), render(
+    #     request,
+    #     'app/selbsttest.html',
+    #     {
+    #         'title': 'Selbsttest',
+    #         'year': datetime.now().year,
+    #         'form': form,
+    #     }
+    # )
+    # return JsonResponse({'error': 'Invalid form data'}), render(
+    #     request,
+    #     'app/selbsttest.html',
+    #     {
+    #         'title': 'Selbsttest',
+    #         'year': datetime.now().year,
+    #     }
+    # )
+    
+
+def calculate_leitung_bol_value(leitung_bol_value):
+    if leitung_bol_value == 'True':
+        return True

@@ -54,20 +54,20 @@ function updateDisplay() {
 
 <div class="damages-container">
 <div class="gallery">
-    <div class="main-image">
+    <div class="img-rounded main-image" style="padding: 10px;">
         <img alt="{{ enb_bilder }}" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bilder }}" class="image-grid-item" oncontextmenu="return false;" id="main-image">
     </div>
 
-    <button class="nav-btn" id="next-btn">Nachstes Bild</button>
+    <button class="btn btn-primary" id="next-btn">Nachstes Bild</button>
 
     <ul class="image-list" id="image-list" style="display: none;">
         {% for pictures in enids %}
-        <li><img src="{% static 'app/content/Schadensbilder/' %}{{pictures.enb_bild}}" alt="{{ pictures.enb_bild }}" data-enb-id="{{ pictures.enb_id }}"></li>
+        <li><img src="{% static 'app/content/Schadensbilder/' %}{{pictures.enb_bild}}" alt="{{ pictures.enb_bild }}" data-enb-id="{{ pictures.enb_id }}" style=""></li>
         {% endfor %}
     </ul>
 </div>
 <p id="current-index"></p>
-<table>
+<table class="table-bordered">
     <tr>
         <th>Kode</th>
         <th>Char 1</th>

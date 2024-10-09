@@ -8,192 +8,216 @@
 <h4>{{ en_hauptkode }}</h4>
 
 <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="damages-container">
-          <!-- Content for the first div -->
-          <h3>Bild</h3>
+  <div class="row">
+    <div class="col-sm-8">
+        <div class="damages-container1" style="padding-bottom: 20px; margin-bottom: 20px;">
+          <!-- The Picture and the buttons to control the site -->
+          <div class="container text-center" style="margin: 10px;">
+            <img src="{% static 'app/content/Schadensbilder/0001.JPG' %}" class="img-fluid img-rounded p-3" style="max-width: 80%;">
+          </div>
           <div class="container">
-            <img src="{% static 'app/content/Schadensbilder/0001.JPG' %}" class="img-fluid img-rounded" style="max-width: 80%;">
+            <button type="submit" class="btn btn-secondary m-2">Nächstes Bild</button>
+            <button type="submit" class="btn btn-secondary m-2">Zufallsbild</button>
+            <button type="submit" class="btn btn-primary m-2">Kode überprüfen</button>
           </div>
         </div>
-        <div class="rounded shadow-sm p-3 mb-3">
-          <!-- Content for the second div -->
-          <h2>Div 2</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="damages-container">
-            <!-- Content for the third div -->
-            <div class="bg-white shadow-md rounded-lg p-4 max-w-4xl mx-auto">
-                <div class="flex justify-between items-center mb-4">
-                 <h1 class="text-lg font-bold">
-                  Kodeassistent
-                 </h1>
-                </div>
-                <div class="flex">
-                 <div class="w-1/3 border-r border-gray-300 pr-4">
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Hauptkode
-                   </label>
-                  </div>
-                  <div>
-                    <form method="post">
-                      {% csrf_token %}
-                      {{ form.as_p }}
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                  </div>
-                 </div>
-                 <div class="w-2/3 pl-4">
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Kodeeingabe
-                   </label>
-                  </div>
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Beschreibung
-                   </label>
-                   <textarea class="w-full border border-gray-300 p-2 h-24" readonly="">Das für die Abdichtung einer Rohrverbindung von zwei aneinandergrenzenden Rohren verwendete Dichtungsmaterial ragt ganz oder teilweise in die Rohrleitung ein.</textarea>
-                  </div>
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Charakterisierung 1
-                   </label>
-                   <select class="w-full border border-gray-300 p-2">
-                    <option>
-                     A Dichtung
-                    </option>
-                    <option>
-                     Z anderer Dichtungsart
-                    </option>
-                   </select>
-                  </div>
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Charakterisierung 2
-                   </label>
-                   <select class="w-full border border-gray-300 p-2">
-                    <option>
-                     A sichtbar verschoben, jedoch nicht in die Rohrleitung h
-                    </option>
-                    <option>
-                     B hängend, aber nicht gebrochen- oberhalb der Mitte
-                    </option>
-                    <option>
-                     C hängend, aber nicht gebrochen- unterhalb der Mitte
-                    </option>
-                    <option>
-                     D gebrochen
-                    </option>
-                   </select>
-                  </div>
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Quantifizierung
-                   </label>
-                   <textarea class="w-full border border-gray-300 p-2 h-12" readonly="">Querschnittsminderung , wenn es sich nicht um einen Dichtung handelt</textarea>
-                  </div>
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Querschnittsminderung
-                   </label>
-                   <select class="w-full border border-gray-300 p-2">
-                    <option>
-                    </option>
-                   </select>
-                  </div>
-                  <div class="mb-2">
-                   <label class="font-bold">
-                    Lage
-                   </label>
-                   <textarea class="w-full border border-gray-300 p-2 h-12" readonly="">Die Lage sollte aufgezeichnet werden</textarea>
-                  </div>
-                  <div class="mb-2 flex items-center">
-                   <input class="mr-2" id="verbindung" type="checkbox"/>
-                   <label for="verbindung">
-                    Verbindung
-                   </label>
-                  </div>
-                 </div>
-                </div>
-                <div class="mt-4 border-t border-gray-300 pt-4">
-                 <div class="flex items-center mb-2">
-                  <label class="font-bold w-24">
-                   Hauptkode
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" readonly="" type="text" value="BAI"/>
-                  <label class="font-bold w-24 ml-4">
-                   Char 1
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   Char 2
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   st. Anm
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   Quant 1
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   Quant 2
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   Lage 1
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   Lage 2
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                 </div>
-                 <div class="flex items-center mb-2">
-                  <label class="font-bold w-24">
-                   Verbindung
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                  <label class="font-bold w-24 ml-4">
-                   Bereich
-                  </label>
-                  <input class="border border-gray-300 p-2 w-16" type="text"/>
-                 </div>
-                 <div class="mb-2">
-                  <label class="font-bold">
-                   Langtext
-                  </label>
-                  <input class="border border-gray-300 p-2 w-full" type="text" value="Einragendes Dichtungsmaterial"/>
-                 </div>
-                 <div class="mb-2">
-                  <label class="font-bold">
-                   Anmerkung
-                  </label>
-                  <input class="border border-gray-300 p-2 w-full" type="text"/>
-                 </div>
-                 <div class="flex justify-between items-center">
-                  <button class="bg-blue-500 text-white px-4 py-2 rounded">
-                   OK
-                  </button>
-                  <div class="flex items-center">
-                   <img alt="Diagram showing the position of the issue" class="mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/bl2genc3LsyWGqg97G4M5ZdeXswf2e2gSfCZn5Cfx4B86084E.jpg" width="50"/>
-                   <button class="bg-gray-300 px-4 py-2 rounded">
-                    Lage
-                   </button>
-                  </div>
-                 </div>
-                </div>
-               </div>
-        </div>
+        <div class="damages-container1" style="padding: 15px;">
+          <!-- The specific Code -->
+          <div class="container">
+            <table class="table-bordered" style="border-color: #f5fafd;">
+              <tr>
+                <td style="border-color: #f5fafd;">
+                  <label for="kode">Kode</label>
+                  <input id="kode" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="char1">Char 1</label>
+                  <input id="char1" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="char2">Char 2</label>
+                  <input id="char2" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="stdAnm">st. Anm</label>
+                  <input id="stdAnm" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="verb">Verb.</label>
+                  <input id="verb" class="form-control" type="text">
+                </td>
+              </tr>
+              <tr style="background-color: #f5fafd;">
+                <td style="border-color: #f5fafd;">
+                  <label for="quant1">Quant 1</label>
+                  <input id="quant1" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="quant2">Quant 2</label>
+                  <input id="quant2" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="lage1">Lage 1</label>
+                  <input id="lage1" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="lage2">Lage 2</label>
+                  <input id="lage2" class="form-control" type="text">
+                </td>
+                <td style="border-color: #f5fafd;">
+                  <label for="ber">Bereich</label>
+                  <input id="ber" class="form-control" type="text">
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
     </div>
+    
+    
+    <div class="col-sm-4">
+        <div class="damages-container1" style="padding: 15px;">
+            <!-- Der Kodeassistent -->
+            <h4>Kodeassistent</h4>
+            <!-- <div>
+              <form id="Kodeassistent" method="post">
+                {% csrf_token %}
+                <div id="leitung_bol"> {{ form.leitung_bol }}</div>
+                <div id="en_hauptkode_b"> {{ form.en_hauptkode_b }}</div>
+                <div id="en_hauptkode_d"> {{ form.en_hauptkode_d }}</div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div> -->
+            <div>
+              <label style="display: inline-block; margin-right: 10px;">
+                <input type="radio" name="leitung" value="leitung"> Leitung
+              </label>
+              <label style="display: inline-block; margin-right: 10px;">
+                <input type="radio" name="knoten" value="knoten"> Knoten
+              </label>
+            </div>
+            <div>
+              <select>
+                <option value="1">BAA - Verformung</option>
+                <option value="2">BAB - Rissbildung</option>
+              </select>
+            </div>
+            <div style="padding-top: 5px;">
+              <label> 
+                Beschreibung <input type="text">
+              </label>
+              <label>
+                Charakterisierung 1
+                <select>
+                  <option value="A">A - vertikal</option>
+                  <option value="B">B - horizontal</option>
+                </select>
+              </label>
+              <label>
+                Charakterisierung 2
+                <select>
+                  <option value="A">A - vertikal</option>
+                  <option value="B">B - horizontal</option>
+                </select>
+              </label>
+              <label>
+                Quantifizierung
+                <select>
+                  <option value="X">Breite des Risses in mm.</option>
+                  <option value="Y">Maß der Absackung in mm</option>
+                </select>
+              </label>
+              <label>
+                Verbindung <input type="checkbox">
+              </label>
+            </div>     
+            <div class="table-responsive">
+              <table class="table table-bordered" style="border-color: #f5fafd; overflow-x: auto; overflow-y: auto;">
+                <tr>
+                  <td style="border-color: #f5fafd;">
+                    <label for="kode">Kode</label>
+                    <input id="kode" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="char1">Char 1</label>
+                    <input id="char1" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="char2">Char 2</label>
+                    <input id="char2" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="stdAnm">st. Anm</label>
+                    <input id="stdAnm" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="verb">Verb.</label>
+                    <input id="verb" class="form-control" type="text">
+                  </td>
+                </tr>
+                <tr style="background-color: #f5fafd;">
+                  <td style="border-color: #f5fafd;">
+                    <label for="quant1">Quant 1</label>
+                    <input id="quant1" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="quant2">Quant 2</label>
+                    <input id="quant2" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="lage1">Lage 1</label>
+                    <input id="lage1" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="lage2">Lage 2</label>
+                    <input id="lage2" class="form-control" type="text">
+                  </td>
+                  <td style="border-color: #f5fafd;">
+                    <label for="ber">Bereich</label>
+                    <input id="ber" class="form-control" type="text">
+                  </td>
+                </tr>
+              </table>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>
 
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+  $(document).ready(function() {
+    $('#leitung_bol').on('click', function() {
+      $('#leitung_bol_value').val('Neu');
+
+    });
+  });
+</script>
+<!-- <script>
+  $(document).ready(function() {
+    $('#Kodeassistent').submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+      $.ajax({
+        type: 'POST',
+        url: '{% url "selbsttest" %}',
+        data: formData,
+        success: function(data) {
+          if (data.leitung_bol_value) {
+            $('#en_hauptkode_b').show();
+            $('#en_hauptkode_d').hide();
+          } else {
+            $('#en_hauptkode_b').hide();
+            $('#en_hauptkode_d').show();
+          }
+        }
+      });
+    });
+  });
+</script> -->
 
 {% endblock %}

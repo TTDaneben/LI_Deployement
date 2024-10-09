@@ -24,6 +24,7 @@ class inputKodeAssi(forms.Form):
     leitung_bol = forms.NullBooleanField(label="", widget=forms.RadioSelect(choices=[(True, 'Leitung'),(False,'Knoten')]), initial=True)
     en_hauptkode_b = forms.ChoiceField(choices=[(obj.en_id, f"{obj.en_hauptkode} - {obj.en_lang}") for obj in EnKode.objects.using('KodeDB').filter(en_kap = "B")], label="Hauptkode")
     en_hauptkode_d = forms.ChoiceField(choices=[(obj.en_id, f"{obj.en_hauptkode} - {obj.en_lang}") for obj in EnKode.objects.using('KodeDB').filter(en_kap = "D")], label="Hauptkode")
+    char_1 = forms.ChoiceField()
 
     verbindung_bol = forms.NullBooleanField(label="Verbindung", widget=forms.CheckboxInput(), required=False)
 
