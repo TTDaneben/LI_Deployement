@@ -5,6 +5,8 @@ services:
     build:
       context: .
       command: pip install -r requirements.txt
+    start:
+      command: python manage.py runserver 0.0.0.0:$PORT
     environment:
       - DJANGO_SETTINGS_MODULE=Inspector_V1.settings
     healthcheck:
