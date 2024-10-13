@@ -1,0 +1,12 @@
+services:
+  web:
+    type: web
+    port: 8000
+    build:
+      context: .
+      command: pip install -r requirements.txt
+    environment:
+      - DJANGO_SETTINGS_MODULE=Inspector_V1.settings
+    healthcheck:
+      http: /
+      timeout: 10s
