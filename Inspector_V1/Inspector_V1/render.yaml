@@ -4,7 +4,7 @@ services:
     port: 8000
     build:
       context: .
-      command: pip install -r requirements.txt
+      command: pip install -r /Inspector_V1/requirements.txt
     start:
       command: python manage.py runserver 0.0.0.0:$PORT
     environment:
