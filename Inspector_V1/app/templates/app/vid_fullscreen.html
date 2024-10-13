@@ -54,7 +54,7 @@ function updateDisplay() {
 
 <div class="damages-container">
 <div class="gallery">
-    <div class="main-image">
+    <div class="main-image img-rounded" style="padding: 10px;">
         <video class="image-grid-item" id="main-image" alt="{{ env_video }}" controls> 
           <source src="{% static 'app/content/Schadensvideos/' %}{{ env_video }}" type="video/mp4">
           Dein Browser unterstützt die Wiedergabe dieses Videos nicht!
@@ -70,7 +70,7 @@ function updateDisplay() {
     </ul> -->
 </div>
 <!-- <p id="current-index"></p> -->
-<table>
+<table class="table-bordered">
     <tr>
         <th>Kode</th>
         <th>Char 1</th>
