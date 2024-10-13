@@ -3,7 +3,6 @@ services:
     type: web
     port: 8000
     build:
-      context: .
       command: pip install -r requirements.txt
     start:
       command: python manage.py runserver 0.0.0.0:$PORT
