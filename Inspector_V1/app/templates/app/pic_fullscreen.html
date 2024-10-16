@@ -58,8 +58,6 @@ function updateDisplay() {
         <img alt="{{ enb_bilder }}" src="{% static 'app/content/Schadensbilder/' %}{{ enb_bilder }}" class="image-grid-item" oncontextmenu="return false;" id="main-image">
     </div>
 
-    <button class="btn btn-primary" id="next-btn">Nachstes Bild</button>
-
     <ul class="image-list" id="image-list" style="display: none;">
         {% for pictures in enids %}
         <li><img src="{% static 'app/content/Schadensbilder/' %}{{pictures.enb_bild}}" alt="{{ pictures.enb_bild }}" data-enb-id="{{ pictures.enb_id }}" style=""></li>
